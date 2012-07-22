@@ -1,0 +1,98 @@
+\documentclass[12pt,fleqn,twoside]{article}
+\usepackage{latexsym,amsmath,amsfonts,amssymb,ab2012}
+
+\begin{document}
+
+\renewcommand{\ehkol}{Conjugacy of piecewise-linear spheric-transitive automorphisms}
+\renewcommand{\ohkol}{Conjugacy of piecewise-linear spheric-transitive automorphisms}
+
+
+
+\Author{ Denys Morozov$^1$}
+
+\Title{Conjugacy of piecewise-linear spheric-transitive automorphisms}
+
+
+\Address{$^1$ National University ``Kyiv-Mohyla Academy'', Kyiv, Ukraine\\
+$\phantom{^1}$ E-mail: denis.morozov178@gmail.com\\}
+% $^2$ National T. Shevchenko University of Kyiv, Ukraine\\
+% $\phantom{^2}$ E-mail: email2@address }
+\addcontentsline{toc}{section}{{\it First AUTHOR }\ Title of Abstract}
+
+%Begin of body text
+% Please use this template and ab2012.sty to prepare your
+% abstract. It should be one page in English. Please submit the abstract both in TeX and PDF file by e-mail to ica-chernikov@npu.edu.ua.
+
+% Deadline for submission of abstracts is the May 1, 2012.
+
+% The references should be presented according to the example
+% given below \cite{B46,BPK}.
+
+\begin{theorem}\label{T1}
+ If $x=(x_1,x_2)\circ \sigma,\ y=(y_1,y_2)\circ \sigma $, then $$x \sim y \Leftrightarrow  x_1\circ x_2 \sim  y_1\circ y_2 $$
+\end{theorem}
+% \begin{proof}
+%   $\Rightarrow$ Let's $x^{(a_1,a_2)}=y$ or $x^{(a_1,a_2)\circ \sigma}=y$. 
+
+% If $x^{(a_1,a_2)}=y$, then $$y_1 = a_1^{-1}\circ x_1\circ a_2,\ y_2=a_2^{-1}\circ x_2\circ a_1\Rightarrow (x_1\circ x_2)^{a_1}= y_1 \circ y_2$$
+
+% If $x^{(a_1,a_2)\circ \sigma }=y$, then $$y_1 = a_2^{-1}\circ x_2\circ a_1,\ y_2=a_1^{-1}\circ x_2\circ a_2 \Rightarrow  (x_1\circ x_2)^{a_2}= y_1 \circ y_2$$
+
+% $\Leftarrow$  Let's $ (x_1\circ x_2)^a = y_1 \circ y_2 $. Then
+% \begin{multline*}
+%  x ^ {( a ,\ x_1^{-1}\circ a \circ y_1 ) }=\\
+% = ( a^{-1} ,\  y_1^{-1} \circ a^{-1}\circ x_1  ) \circ (x_1,x_2)\circ \sigma \circ ( a ,\ x_1^{-1}\circ a \circ y_1 )=\\
+% =(y_1, y_1^{-1}\circ(x_1\circ x_2)^a)\circ \sigma = \\
+%  =(y_1, y_2)\circ \sigma = y
+% \end{multline*}
+
+
+% \end{proof}
+Let us build a sequence of automorphisms $x^{(n)}$ on spheric-transitive automorphism $x$ in the following way:
+$$x^{(1)}=x, 
+x^{(n)}=(x_1^{(n)},x_2^{(n)})\circ \sigma, x^{(n+1)}=x_1^{(n)}\circ x_2^{(n)}$$
+
+\begin{theorem}
+ $$x\sim y  \Leftrightarrow \exists n\in \mathbb{N},\ x^{(n)} \sim y^{(n)} $$
+\end{theorem}
+
+% \begin{proof}
+
+%   According to induction and theorem~\ref{T1}: $$x\sim y  \Leftrightarrow  x^{(1)} \sim y^{(1)} \Leftrightarrow  x^{(2)} \sim y^{(2)} \Leftrightarrow ...  \Leftrightarrow  x^{(n)} \sim y^{(n)}  $$
+
+% \end{proof}
+
+
+
+% {\bf Definition} We shall define function $Lin^{(n)}:Aut T_2 \rightarrow Z_2$ in the following manner - if all the states of the n-th level of automorphism $a$ are linear functions $a_1x+b_1, a_2x+b_2,\dots ,a_{2^n}x+b_{2^n}$ , then
+% $Lin^{(n)}(a) = \prod_{i=1}^{2^n}a_i$
+%  such, that the value of the function $Lin^{(n)}(a)$ is defined.
+
+
+\begin{lemma}
+  If an automorphism $a\in Aut T_2$ is piecewise-linear, then
+ $\exists N\in \mathbb{N}, \forall n \geqslant N $ such, that the value of the function $Lin^{(n)}(a)$ is defined.
+ 
+\end{lemma}
+\begin{theorem}\label{Spr1}
+  Piecewise-linear functions $a$ and $b$  are conjugate in $FAut T_2$ if and only if
+$$\exists N\in \mathbb{N},\ Lin^{(N)}(a) = Lin^{(N)}(b) $$
+\end{theorem}
+% \begin{theorem}\label{Spr2}
+%   Piecewise-linear functions $a$ and $b$ are not conjugate in $FAut T_2$ if and only if
+% $$\exists N\in \mathbb{N},\ Lin^{(N)}(a) \neq Lin^{(N)}(b) $$
+% \end{theorem}
+{\bf Remark} According to the theorem about differentiable finite-state automorphisms \cite{D46} and theorems \ref{Spr1} are the conjugacy criteria of differentiable finite-state  automorphisms.
+
+
+%End of body text
+
+\begin{thebibliography}{01}
+\footnotesize
+\bibitem{D46} Denis Morozov
+               \emph{Differentiable finite-state izometries and izometric
+polynomials of the ring of integer 2-adic numbers}. 8th International Algebraic Conference 
+July 5  12 (2011), Lugansk, Ukraine.
+\end{thebibliography}
+
+\end{document}

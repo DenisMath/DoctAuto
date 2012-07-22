@@ -1,0 +1,185 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+% \usepackage{tabularx}
+% \usepackage{array}
+%\usepackage{tikZ}
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+% \usepackage{geometry} % to change the page dimensions
+% \geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margins=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+% \usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+
+\usepackage[T2A]{fontenc}
+\usepackage[cp1251]{inputenc}
+\usepackage[russian]{babel}
+
+
+%\usepackage{pst-plot,pstricks-add}
+
+% \usepackage{booktabs} % for much better looking tables
+% \usepackage{array} % for better arrays (eg matrices) in maths
+% \usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+% \usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+% \usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% % These packages are all incorporated in the memoir class to one degree or another...
+
+% %%% HEADERS & FOOTERS
+% \usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+% \pagestyle{fancy} % options: empty , plain , fancy
+% \renewcommand{\headrulewidth}{0pt} % customise the layout...
+% \lhead{}\chead{}\rhead{}
+% \lfoot{}\cfoot{\thepage}\rfoot{}
+
+% %%% SECTION TITLE APPEARANCE
+% \usepackage{sectsty}
+% \allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% % (This matches ConTeXt defaults)
+
+% %%% ToC (table of contents) APPEARANCE
+% \usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+% \usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+% \renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+% \renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Диссер}
+\author{Денис Морозов}
+%\date{ } % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\newcommand{\tabcen}[2]{
+\begin{tabular}{c}
+#1\\
+#2\\
+\end{tabular}
+}
+\newtheorem{theorem}{Теорема}[section]
+\newtheorem{lemma}[theorem]{Лема}
+\newtheorem{proposition}[theorem]{Гіпотеза}
+\newtheorem{corollary}[theorem]{Наслідок}
+
+\newenvironment{proof}[1][Доведення]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{definition}[1][Означення]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{example}[1][Приклад]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{remark}[1][Зауваження]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+\newcommand{\qed}{\nobreak \ifvmode \relax \else
+      \ifdim\lastskip<1.5em \hskip-\lastskip
+      \hskip1.5em plus0em minus0.5em \fi \nobreak
+      \vrule height0.75em width0.5em depth0.25em\fi}
+\begin{document}
+%\maketitle
+
+% Для манипулирования рекурсивно определенными объектами (в частности, списками и деревьями ) целесообразно использовать рекурсивно определенные функции (например, подсчет количества элементов списка, обход дерева и т.д.).
+\section{Спряженність кусково-лінійних шарово-транзитивних автоморфізмів}
+% $$y_1 = a_1^{-1}\circ x_1\circ a_2, y_2=a_2^{-1}\circ x_2\circ a_1$$
+% $$y_1 = a_2^{-1}\circ x_2\circ a_1, y_2=a_1^{-1}\circ x_2\circ a_2$$
+\begin{theorem}\label{T1}
+ Нехай  $x=(x_1,x_2)\circ \sigma,\ y=(y_1,y_2)\circ \sigma $, тоді $$x \sim y \Leftrightarrow  x_1\circ x_2 \sim  y_1\circ y_2 $$
+\end{theorem}
+\begin{proof}
+  $\Rightarrow$ Нехай $x^{(a_1,a_2)}=y$ або $x^{(a_1,a_2)\circ \sigma}=y$. 
+
+Якщо $x^{(a_1,a_2)}=y$, то $$y_1 = a_1^{-1}\circ x_1\circ a_2,\ y_2=a_2^{-1}\circ x_2\circ a_1\Rightarrow (x_1\circ x_2)^{a_1}= y_1 \circ y_2$$
+
+Якщо $x^{(a_1,a_2)\circ \sigma }=y$, то $$y_1 = a_2^{-1}\circ x_2\circ a_1,\ y_2=a_1^{-1}\circ x_2\circ a_2 \Rightarrow  (x_1\circ x_2)^{a_2}= y_1 \circ y_2$$
+
+$\Leftarrow$  Нехай $ (x_1\circ x_2)^a = y_1 \circ y_2 $. Тоді
+\begin{multline*}
+ x ^ {( a ,\ x_1^{-1}\circ a \circ y_1 ) }=\\
+= ( a^{-1} ,\  y_1^{-1} \circ a^{-1}\circ x_1  ) \circ (x_1,x_2)\circ \sigma \circ ( a ,\ x_1^{-1}\circ a \circ y_1 )=\\
+=(y_1, y_1^{-1}\circ(x_1\circ x_2)^a)\circ \sigma = \\
+ =(y_1, y_2)\circ \sigma = y
+\end{multline*}
+
+ч.т.д
+\end{proof}
+Побудуємо послідовність автоморфізмів $x^{(n)}$ по шарово-транзитивному автоморфізму $x$ наступним чином:
+$$x^{(1)}=x$$
+$$x^{(n)}=(x_1^{(n)},x_2^{(n)})\circ \sigma$$
+$$x^{(n+1)}=x_1^{(n)}\circ x_2^{(n)}$$
+
+\begin{theorem}
+ $$x\sim y  \Leftrightarrow \exists n\in \mathbb{N},\ x^{(n)} \sim y^{(n)} $$
+\end{theorem}
+
+\begin{proof}
+
+  За індукцією і за теоремою~\ref{T1}: $$x\sim y  \Leftrightarrow  x^{(1)} \sim y^{(1)} \Leftrightarrow  x^{(2)} \sim y^{(2)} \Leftrightarrow ...  \Leftrightarrow  x^{(n)} \sim y^{(n)}  $$
+
+\end{proof}
+
+\begin{definition}
+  Означимо функцію $Lin^{(n)}:Aut T_2 \rightarrow Z_2$ наступним чином - якщо всі стани n-го рівня автоморфізму $a$ є лінійними функціями $a_1x+b_1, a_2x+b_2,\dots ,a_{2^n}x+b_{2^n}$ , то
+$$Lin^{(n)}(a) = \prod_{i=1}^{2^n}a_i$$
+ в іншому випадку значення $Lin^{(n)}(a)$ є невизначеним.
+\end{definition}
+\begin{lemma}
+  Якщо автоморфізм $a\in Aut T_2$ є кусково-лінійним, то
+ $\exists N\in \mathbb{N}, \forall n \geqslant N $, що значення функції $Lin^{(n)}(a)$ є визначеним.
+ 
+\end{lemma}
+\begin{theorem}\label{Spr1}
+  Кусково-лінійні функції $a$ та $b$  є спряженими в $FAut T_2$ тоді, і тільки тоді коли
+$$\exists N\in \mathbb{N},\ Lin^{(N)}(a) = Lin^{(N)}(b) $$
+\end{theorem}
+\begin{theorem}\label{Spr2}
+  Кусково-лінійні функції $a$ та $b$ не є спряженими в $FAut T_2$ тоді, і тільки тоді коли
+$$\exists N\in \mathbb{N},\ Lin^{(N)}(a) \neq Lin^{(N)}(b) $$
+\end{theorem}
+\begin{remark}
+  Згідно з теоремою о дифференційовних скінчено-станових автоморфізмов теореми \ref{Spr1}  та \ref{Spr2} є крітерієм
+спряженності таких автоморфізмів. 
+\end{remark}
+\end{document}
+% Insert Section
+% C-c C-s
+% Insert L
+% a
+% TEX environment
+% C-c C-e
+% Insert item
+% C-c LFD
+% Insert item (alias)
+% M-RET
+% Close L
+% a
+% TEX environment
+% C-c ]
+% Insert TEX macro
+% \{} C-c C-m
+% Insert double brace
+% C-c {
+% Complete TEX macro
+% M-TAB
+% Smart “quote”
+% "
+% Smart “dollar”

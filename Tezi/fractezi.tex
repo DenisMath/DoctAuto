@@ -1,0 +1,192 @@
+%%% ysmp2template.uk.tex
+%
+% Це файл-зразок для тез доповіді на
+%   Другій міжуніверситетській науковій конференції молодих вчених з математики та фізики
+%   28-29 квітня 2011 р.
+%   Київ, Україна
+%
+% - Перейменуйте цей файл відповідно до прізвищ авторів
+%   (будь ласка, використовуйте тільки малі латинські літери).
+%
+% - Підготуйте свої тези, використовуючи цей зразок.
+%
+% - Переконайтеся, що LaTeX не повідомляє про жодні помилки.
+%   Не забудьте вилучити непотрібні коментарі.
+%
+% - Надішліть TeX-файл на адресу оргкомітету конференції:
+%   ysmp2@npu.edu.ua
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,12pt,reqno]{amsart}% Будь ласка, використовуйте клас документа amsart
+
+\usepackage[T2A]{fontenc}
+%\usepackage[T2A]{amstex12beta}
+\usepackage{amsfonts,amssymb,amsmath,amsthm,amscd,latexsym}
+\usepackage[cp1251]{inputenc}% Змініть кодування, якщо потрібно
+\usepackage[ukrainian]{babel}
+
+%%% Підключайте будь-які необхідні пакети тут %%%%%%%%%%%%%%%%%%%%%%%%%%
+% Наприклад,
+ \usepackage{graphicx}% Якщо потрібно додавати ілюстрації в документ
+\usepackage{textcase}% Корисно для української чи російської мови
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Означення теоремоподібних оточень %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\theoremstyle{plain}
+\newtheorem{theorem}{Теорема}
+\newtheorem*{theorem*}{Теорема}
+\newtheorem{corollary}{Наслідок}
+\newtheorem*{corollary*}{Наслідок}
+\newtheorem{lemma}{Лема}
+\newtheorem*{lemma*}{Лема}
+\newtheorem{proposition}{Твердження}
+\newtheorem*{proposition*}{Твердження}
+\newtheorem{conjecture}{Гіпотеза}
+\newtheorem*{conjecture*}{Гіпотеза}
+\theoremstyle{definition}
+\newtheorem{definition}{Означення}
+\newtheorem*{definition*}{Означення}
+\theoremstyle{remark}
+\newtheorem{remark}{Зауваження}
+\newtheorem*{remark*}{Зауваження}
+\newtheorem{example}{Приклад}
+\renewcommand{\figurename}{Мал.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Помістить свої локальні означення тут %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Наприклад,
+% \newcommand{\R}{\mathbb{R}}
+% \newcommand{\set}[1]{\left\{#1\right\}}
+% \newcommand{\norm}[2][]{\left\lVert#2\right\rVert_{#1}}
+% \DeclareMathOperator{\Prob}{\mathsf{P}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\title[Розмірність Хаусдорфа лінійного комплексу]{Розмірність Хаусдорфа граничної множини
+напівгрупи стискаючих відображень}
+\author{Д.І. Морозов}
+\address{Національний університет "Києво-Могилянська Академія"\\
+         Київ, Україна}
+\email{denis.morozov178@gmail.com}
+%\urladdr{http://www.domain.com.ua/~peauthor/}
+% Вкажіть інформацію про інших авторів (скільки потрібно)
+% \author{Д. Р. Автор}
+% \address{Інститут математики НАН України\\
+%          Київ, Україна}
+% \email{d.e.author@other-domain.com.ua}
+
+\maketitle
+
+
+Нехай $S=\{ p_1,p_2...p_n \}$ - множина точок комплексної площини $\mathbb{C}$,
+a функція $f:\mathbb{C}\rightarrow \mathbb{C}$ - стискаюча функція
+комплексної площини з нерухомою точкою 0 ($f(0)=0$).
+
+\begin{definition} Комплексом на множині $S$, породженим функцією $f$ назвемо множину функцій $S_f=\{f_k(x)=f(x-p_k)+p_k | p_k \in S\}$.
+Якщо $f(x)=ax,\vert a \vert < 1$, то будемо називати комплекс
+$S_f$ лінійним.
+\end{definition}
+Легко бачити, що точки з множини $S$ є нерухомими точками функцій з множини $S_f$.
+
+\begin{definition} Очевидно, що множина функцій з множини
+$S_f$ з операцією суперпозиції породжує напівгрупу стискаючих
+функцій, яку позначимо, як $\langle S_f \rangle$.
+\end{definition}
+
+За теоремою Банаха про нерухому точку стискаючого відображення
+кожна функція з множини $\langle S_f \rangle$ має єдину нерухому
+точку.
+
+\begin{definition} Множину нерухомих точок функцій з напівгрупи $\langle S_f
+\rangle$ позначимо, як $\mathfrak{S}\langle S_f \rangle$.
+\end{definition}
+
+\begin{definition} Назвемо множину точок $\mathfrak{L}\langle b\rangle$
+ граничною множиною послідовності $b=\{b_k | b_k \in
+\mathbb{C}\}$ якщо:
+$$ (\forall \varepsilon >0 , \exists N\in \mathbb{N} ,  \forall n>N , \exists z\in
+S ( \rho_{\mathbb{C}}(z,b_n)< \varepsilon)) \cap $$ $$ \cap
+(\forall \varepsilon >0 , \forall z\in S\ , \exists n\in
+\mathbb{N} ( \rho_{\mathbb{C}}(z,b_n)< \varepsilon))
+$$ де $\rho_{\mathbb{C}}$- метрика на комплексній площині.
+\end{definition}
+
+\begin{definition} Нехай $B$ - множина послідовностей. Означимо
+$\mathfrak{L}\langle B\rangle$, як:
+$$\mathfrak{L}\langle B\rangle = \bigcup\limits_{b\in B}\mathfrak{L}\langle
+b\rangle$$
+\end{definition}
+
+\begin{definition}
+Для комплексу $S_f$, числа $x\in \mathbb{C}$ та функції
+$i:\mathbb{N} \rightarrow {1,2,...,|S|}$ розглянемо множину
+послідовностей $c_k[S_f](x,i)$, визначених наступним чином:
+$$c_0[S_f](x,i)=x, c_n[S_f](x,i)=f_{i(n)}(c_{n-1}[s_f](x,i))$$
+\end{definition}
+
+
+
+\begin{theorem}
+  \label{1}
+  Для комплексу $S_f$ та довільної функції
+$i:\mathbb{N} \rightarrow \{1,2,...,|S|\}$ має місце рівнісь:
+$$\forall x_1,x_2 \in \mathbb{C} \ \mathfrak{L}\langle
+c_n[S_f](x_1,i)\rangle=\mathfrak{L}\langle
+c_n(x_2,i)[S_f]\rangle$$
+\end{theorem}
+
+\begin{definition} Нехай $S_f$ - комплекс, $I$ - множина всіх функцій
+$i:\mathbb{N} \rightarrow {1,2,...,|S|}$. Означимо
+$\mathfrak{L}\langle c_n[S_f](\ast{,}\ast)\rangle$, як:
+$$\mathfrak{L}\langle c_n[S_f](\ast{,}\ast)\rangle =
+\bigcup\limits_{i\in I}\mathfrak{L}\langle c_n[S_f](x,i)\rangle$$
+\end{definition}
+
+\begin{theorem}
+  \label{2}
+  Для комплексу $S_f$  має місце рівнісь:
+$$\mathfrak{S}\langle S_f \rangle = \mathfrak{L}\langle c_n[S_f]( \ast {,} \ast)\rangle$$
+\end{theorem}
+
+\begin{definition}Будемо казати, що множина $M$ самоподібна
+відносно комплексу $S_f$, якщо $$M=\bigcup\limits_{k\in D_S}
+f_k(M)$$
+\end{definition}
+
+\begin{theorem}
+  \label{3}
+  Множина $\mathfrak{S}\langle S_f \rangle$ самоподібна відносно
+  комплексу $S_f$.
+\end{theorem}
+
+Позначимо розмірність Хаусдорфа множини $K$, як
+$\mathbf{H}_{\mathbb{C}}(K)$.
+
+\begin{theorem}
+  \label{4}
+   $\mathbf{H}_{\mathbb{C}}(\mathfrak{S}\langle S_{ax} \rangle) \leqslant -log_{|a|}|S|$
+\end{theorem}
+
+\begin{example}
+  Розглянемо комплекс $S_{0.383x}$, де S сладається з коренів 5-го
+  степеня з 1 та точки 0. Згідно доведених теорем гранична множина комплексу $S_{0.383x}$
+   є самоподібною і ії розмірність
+  Хаусдорфа   дорівнює $-log_{0.383}6\approx 1.866966$.
+  \end{example}
+  \begin{figure}[h!]
+\center{\includegraphics[width=.5\linewidth]{tezi5.eps}}
+\caption{Гранична множина лінійного комплексу $S_{0.383x},
+|S|=6$.}
+\end{figure}
+
+
+
+
+
+
+
+
+
+\end{document}
