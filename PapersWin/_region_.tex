@@ -1,4 +1,4 @@
-% !TEX TS-program = pdflatex
+\message{ !name(SphTr_DiffFS_conj.tex)}% !TEX TS-program = pdflatex
 % !TEX encoding = UTF-8 Unicode
 
 % This is a simple template for a LaTeX document using the "article" class.
@@ -96,36 +96,12 @@
       \hskip1.5em plus0em minus0.5em \fi \nobreak
       \vrule height0.75em width0.5em depth0.25em\fi}
 \begin{document}
-%\maketitle
 
-% Для манипулирования рекурсивно определенными объектами (в частности, списками и деревьями ) целесообразно использовать рекурсивно определенные функции (например, подсчет количества элементов списка, обход дерева и т.д.).
-\section{Спряженність скінченно-станових кусково-лінійних шарово-транзитивних автоморфізмів}
-Як відомо, питання спряженності для скінченно-станових лінійних шарово-транзитивних автоморфізмів
- вирішується наступною теоремою:
-\begin{theorem}\label{lin_conjugacy}
-%(Теорема о спряженності лінійних шарово-транзитивних автоморфізмів)
-Два лінійних скінченно-станових шарово-транзитивних автоморфізма дерева $T_2$ спряженні в $FAutT_2$ тоді, і тільки
-тоді, коли мають однакові лінійні коеффіціенти.
-  \end{theorem}
-
-  \begin{example}
-   За теоремою \ref{lin_conjugacy} автоморфізми $5x+1$ та $5x+3$ спряженні в $FAutT_2$, а автоморфізми  $5x+1$ та $9x+1$ не спряженні в $FAutT_2$.
-  \end{example}
-
-Але теорема \ref{lin_conjugacy} не дозволяє відповісти на питання, чи спряжені, наприклад, скінченно-станові шарово-транзитивні автоморфізми вигляду $(3x,15x+1)\circ\sigma$ та $(5x+2,9x+3)\circ\sigma$, або $(x,15x+1)\circ\sigma$ та $(3x,15x+1)\circ\sigma$.
-
-Метою данної статті є узагальнення теореми \ref{lin_conjugacy} для класу скінченно-станових кусково-лінійних шарово-транзитивних автоморфізмів. 
-\begin{definition}
- Поставимо у відповідність автоморфізму $a$ дерева $T_2$ функцію $a_f:Z_2\rightarrow Z_2$:
-$$a_f(\hat{x})=x*a$$ де x - кінець дерева $T_2$, $\hat{x}$ - відповідне представлення кінця x в кільці  $Z_2$ цілих 2-адичних чисел. 
-\end{definition}
-\begin{definition}
-  Назвемо автоморфізм $a$ дерева $T_2$ кусково-лінійним, якщо відповідна йому функція $a_f:Z_2\rightarrow Z_2$ будується наступним чином:
-$Z_2$ розбивається на скінченну кількість околів, на кожному з яких функція $a_f:Z_2\rightarrow Z_2$ є лінійною. 
-\end{definition}
+\message{ !name(SphTr_DiffFS_conj.tex) !offset(1) }
+\section{Спряженність кусково-лінійних шарово-транзитивних автоморфізмів}
 % $$y_1 = a_1^{-1}\circ x_1\circ a_2, y_2=a_2^{-1}\circ x_2\circ a_1$$
 % $$y_1 = a_2^{-1}\circ x_2\circ a_1, y_2=a_1^{-1}\circ x_2\circ a_2$$
-\begin{theorem}\label{T1_conjugacy}
+\begin{theorem}\label{T1}
  Нехай  $x=(x_1,x_2)\circ \sigma,\ y=(y_1,y_2)\circ \sigma $, тоді $$x \sim y \Leftrightarrow  x_1\circ x_2 \sim  y_1\circ y_2 $$
 \end{theorem}
 \begin{proof}
@@ -150,13 +126,13 @@ $$x^{(1)}=x$$
 $$x^{(n)}=(x_1^{(n)},x_2^{(n)})\circ \sigma$$
 $$x^{(n+1)}=x_1^{(n)}\circ x_2^{(n)}$$
 
-\begin{theorem}\label{level_conjugacy}
+\begin{theorem}
  $$x\sim y  \Leftrightarrow \exists n\in \mathbb{N},\ x^{(n)} \sim y^{(n)} $$
 \end{theorem}
 
 \begin{proof}
 
-  За індукцією і за теоремою~\ref{T1_conjugacy}: $$x\sim y  \Leftrightarrow  x^{(1)} \sim y^{(1)} \Leftrightarrow  x^{(2)} \sim y^{(2)} \Leftrightarrow ...  \Leftrightarrow  x^{(n)} \sim y^{(n)}  $$
+  За індукцією і за теоремою~\ref{T1}: $$x\sim y  \Leftrightarrow  x^{(1)} \sim y^{(1)} \Leftrightarrow  x^{(2)} \sim y^{(2)} \Leftrightarrow ...  \Leftrightarrow  x^{(n)} \sim y^{(n)}  $$
 
 \end{proof}
 
@@ -168,43 +144,22 @@ $$Lin^{(n)}(a) = \prod_{i=1}^{2^n}a_i$$
 \begin{lemma}
   Якщо автоморфізм $a\in Aut T_2$ є кусково-лінійним, то
  $\exists N\in \mathbb{N}, \forall n \geqslant N $, що значення функції $Lin^{(n)}(a)$ є визначеним.
- \end{lemma}
- \begin{proof}
-   Легко бачити, якщо $a\in Aut T_2$ є кусково-лінійним, то існує рівень, для якого всі стани є лінійними функціями, 
-отже значення функції $Lin^{(n)}(a)$ є визначеним.
- \end{proof}
+ 
+\end{lemma}
 \begin{theorem}\label{Spr1}
   Кусково-лінійні функції $a$ та $b$  є спряженими в $FAut T_2$ тоді, і тільки тоді коли
 $$\exists N\in \mathbb{N},\ Lin^{(N)}(a) = Lin^{(N)}(b) $$
 \end{theorem}
-\begin{proof}
-  Оскільки функції $a$ та $b$ є кусково-лінійними, то існує N, для якого всі стани N-го рівня $a$ та $b$ є лінійними функціями. 
-
-Отже $x*a^{(N)}= c_1x+d_1,\  x*b^{(N)}= c_2x+d_2 $, де 
-$$ c_1 = Lin^{(N)}(a)$$
-$$ c_2 = Lin^{(N)}(b)$$
-  За теоремою \ref{lin_conjugacy} про спряженність лінійних функцій та теоремою \ref{level_conjugacy} функції $a$ та $b$  є спряженими в $FAut T_2$ тоді, і тільки тоді коли
-$$\exists N\in \mathbb{N},\ Lin^{(N)}(a) = Lin^{(N)}(b) $$
-ч.т.д. 
-\end{proof}
-Технічно зручним при перевірці спряженності скінченно-станових шарово-транзитвних автоморфізмів є наступне переформулювання теореми  \ref{lin_conjugacy}:
 \begin{theorem}\label{Spr2}
   Кусково-лінійні функції $a$ та $b$ не є спряженими в $FAut T_2$ тоді, і тільки тоді коли
-$$\exists N\in \mathbb{N},\ Lin^{(N)}(a) \neq Lin^{(N)}(b)$$
+$$\exists N\in \mathbb{N},\ Lin^{(N)}(a) \neq Lin^{(N)}(b) $$
 \end{theorem}
+\begin{remark}
+  Згідно з теоремою о дифференційовних скінченно-станових автоморфізмах теореми \ref{Spr1}  та \ref{Spr2} є крітерієм
+спряженності таких автоморфізмів. 
+\end{remark}
+\message{ !name(SphTr_DiffFS_conj.tex) !offset(-1) }
 
-\begin{example}
-
-    Cкінченно-станові шарово-транзитивні автоморфізми  $$(3x,15x+1)\circ\sigma$$ $$(5x+2,9x+3)\circ\sigma$$ є спряженними в $FAut T_2$ за теоремою \ref{Spr1}.
-  
-Автоморфізми $$(x,13x+1)\circ\sigma$$ $$(x,17x+1)\circ\sigma$$ не є спряженними
- в $FAut T_2$ за теоремою \ref{Spr2} .
-
-\end{example}
-% \begin{remark}
-%   Згідно з теоремою о дифференційовних скінченно-станових автоморфізмах теореми \ref{Spr1}  та \ref{Spr2} є крітерієм
-% спряженності таких автоморфізмів. 
-% \end{remark}
 \end{document}
 % Insert Section
 % C-c C-s

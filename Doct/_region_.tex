@@ -1,0 +1,64 @@
+\message{ !name(DoctText_cp1251.tex)}\documentclass[a4paper,12pt]{article}
+\usepackage{a4wide}
+\usepackage[cp1251]{inputenc}
+\usepackage[english,russian,ukrainian]{babel}
+\usepackage{amsfonts,amssymb,amsmath,amsthm,amscd,latexsym}
+\usepackage{graphicx}
+\usepackage[matrix,arrow,curve]{xy}
+%\pagestyle{headings}
+\usepackage{fancyhdr}
+\fancyfoot{} \rhead{\thepage} \cfoot{} \lhead{}
+\renewcommand{\headrulewidth }{ 0pt}
+\pagestyle{fancy} \sloppy
+\parindent = 1 cm
+\topmargin - 16mm \textwidth  160mm \textheight 250mm
+\oddsidemargin 10mm \evensidemargin 7mm
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}%
+{\hbox{$\mathsurround=0pt #1$}}{}}
+\newcommand{\bb}[1]{{\bf #1}}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\numberwithin{equation}{subsection}
+\newtheorem{theorem}{Теорема}[subsection]
+\newtheorem{lemma}{Лема}[subsection]
+\newtheorem{corollary}{Наслідок}[subsection]
+\newtheorem{remark}{Зауваження}[subsection]
+\newtheorem{definition}{Означення}[subsection]
+\newtheorem{example}{Приклад}[subsection]
+\newtheorem{hyp}{Гіпотеза}[subsection]
+\renewcommand{\baselinestretch}{1.5}
+
+\begin{document}
+
+\message{ !name(DoctText_cp1251.tex) !offset(634) }
+\subsection{Спряженність кусково-лінійних шарово-транзитивних автоморфізмів}
+ \begin{definition}
+ Означимо фактор n-го  рівня шарово-транзитивного автоморфізма $a=(b,c)\circ \sigma$ індуктивно. Фактором 1-го рівня для автоморфізму $a$ называється автоморфізм $b\circ c$. Фактором  n-го  рівня автоморфізма $a$ називається фактор 1-го рівня для фактора (n-1)-рівня автоморфізма $a$ .
+ \end{definition}
+
+  \begin{definition}
+  Фактор-послідовністью для автоморфізму $a\in AutZ_2$ назвемо послідовність $\{a_n\}$ автоморфізмів, в якій $a_n$ дорівнює фактору n-го рівня для автоморфізму $a$.
+ \end{definition}
+
+ \begin{lemma}
+ Для довільної кусочно-лінійної функції існує n, для якого фактор n-го рівня є лінійною функцією.
+ \end{lemma}
+
+
+ \begin{theorem}Дві шарово-транзитивні скінченно-станові ізометрії 0-спряжені в $FAutT_2$ тоді, і тількі тоді, коли існує рівень, для якого спряжені в $FAutT_2$ їх фактори.
+ \end{theorem}
+
+
+
+  \begin{theorem}Дві скінченно-станові шарово-транзитивні кусочно лінійні функції спряжені в $FAutT_2$ тоді, і тількі тоді, коли вони 0-спряжені в $FAutT_2$.
+ \end{theorem}
+
+  \begin{theorem}Дві скінченно-станові шарово-транзитивні кусочно лінійні функції спряжені в $FAutT_2$ тоді, і тількі тоді, коли існує рівень, для якого спряжені в $FAutT_2$ лінійні функції їх факторів.
+ \end{theorem}
+
+
+
+  \newpage
+
+\message{ !name(DoctText_cp1251.tex) !offset(1073) }
+
+  \end{document}
