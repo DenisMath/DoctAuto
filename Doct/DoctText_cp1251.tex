@@ -505,11 +505,50 @@ $x_1$  &  $x_2$ & $x_1\oplus x_2$  & $x_1\cup x_2$&  $(x_1\oplus x_2)\oplus (x_1
   \newpage
 
  \section{Централізатори шарово-транзитивних елементів в $FAutT_2$}
+Відомо, що централізатори шарово-транзитивних елементів в $AutT_2$ описуються наступною теоремою:
+ \begin{theorem}\label{SPTR_centralizer}
+   Нехай $x$ - шарово-транзитивний автоморфізм. Тоді
+ $$C_{AutT_2}(x)=\{x^p|p\in Z_2\} $$
+ \end{theorem}
 
-  \begin{theorem} Нехай $x$ - шарово-транзитивний автоморфізм. Тоді
- $$0*C_{FAutT_2}(x)=Z_2 $$
-  \end{theorem}
+Метою даної роботи є дослідження централізаторів  шарово-транзитивних елементів в $FAutT_2$.
 
+\begin{lemma}\label{nul_epsilon}
+   $$0*\varepsilon^p=p$$
+\end{lemma}
+\begin{proof}
+Оскільки $t*\varepsilon^p = t+p$, то $0*\varepsilon^p = 0+p = p $.
+\end{proof}
+
+\begin{theorem}
+  Нехай $\chi_x$ - 0-розв'язок рівняння спряженості $\varepsilon^t = x$ відносно автоморфізма t. Тоді має місце рівність:
+   $$0*x^p=p*\chi_x$$
+\end{theorem}
+\begin{proof}
+Оскільки  $\varepsilon^{\chi_x} = x$, то має місце співвідношення:
+$$x^p = (\chi_x^{-1}\circ\varepsilon\circ\chi_x)^p=\chi_x^{-1}\circ\varepsilon^p\circ\chi_x$$
+Отже за лемою \ref{nul_epsilon} та рівністю $0*\chi_x = 0$ отримуємо:
+$$0*x^p=0*(\chi_x^{-1}\circ\varepsilon^p\circ\chi_x) = ((0*\chi_x^{-1})*\varepsilon^p)*\chi_x) = (0*\varepsilon^p)*\chi_x =  p*\chi_x$$  ч.т.д.
+\end{proof}
+
+Легко бачити, що має місце наступна лема:
+ \begin{lemma} Нехай $x$ - шарово-транзитивний автоморфізм. Тоді
+ $$0*C_{AutT_2}(x)=Z_2 $$
+  \end{lemma}
+  \begin{proof}
+  \end{proof}
+
+\begin{theorem}
+   Нехай $\varepsilon$ - adding machine. Тоді
+ $$C_{FAutT_2}(\varepsilon)=\{x^p|p\in Z_2 \cap \mathbb{Q}\} $$ 
+\end{theorem}
+
+\begin{theorem}
+   Нехай $x$ - шарово-транзитивний автоморфізм. Тоді
+ $$C_{FAutT_2}(x) \subseteq \{x^{(p*\chi _{\varepsilon}^{-1})}|p\in Z_2 \cap \mathbb{Q}\} $$ 
+\end{theorem}
+
+ 
   \begin{definition} Означимо функцію $h_x:C_{AutZ_2}(x)\rightarrow Z_2$, де $x$ - шарово-транзитивний скінченностановий автоморфізм, наступним чином: $h_x(u)=0*u$.
  \end{definition}
 
@@ -519,13 +558,13 @@ $x_1$  &  $x_2$ & $x_1\oplus x_2$  & $x_1\cup x_2$&  $(x_1\oplus x_2)\oplus (x_1
  $h_x:C_{AutT_2}(x)\rightarrow Z_2$ - бієкція.
  \end{theorem}
 
- \begin{theorem} Нехай $\varepsilon$ - шарово-транзитивний скінченностановий автоморфізм. Тоді
+ \begin{theorem} Нехай $\varepsilon$ - adding machine. Тоді
  $$0*C_{FAutT_2}(\varepsilon)=(Z_2 \cap \mathbb{Q})$$
   \end{theorem}
 
 
   \begin{definition}
- Означимо функцію $Log_x:C_{AutZ_2}(x) \rightarrow Z_2$, де $x$ - шарово-транзитивний скінченностановий автоморфізм, наступним чином: $Log_x(u)=t$ для $u=x^t$.
+ Означимо функцію $Log_x:C_{AutZ_2}(x) \rightarrow Z_2$, де $x$ - шарово-транзитивний скінченно-становий автоморфізм, наступним чином: $Log_x(u)=t$ для $u=x^t$.
   \end{definition}
 
    \begin{theorem} Нехай $x$ - шарово-транзитивний скінченностановий автоморфізм. Тоді
