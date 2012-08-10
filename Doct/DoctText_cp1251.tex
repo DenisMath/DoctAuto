@@ -513,14 +513,25 @@ $x_1$  &  $x_2$ & $x_1\oplus x_2$  & $x_1\cup x_2$&  $(x_1\oplus x_2)\oplus (x_1
 
 Метою даної роботи є дослідження централізаторів  шарово-транзитивних елементів в $FAutT_2$.
 
+\begin{definition}
+ Позначимо як:
+
+$x*a$ - ліву дію автоморфізма $a$ на кінець $x$ дерева $T_2$,
+
+$a\circ b$ - суперпозицію автоморфізів $a$ та $b$ дерева $T_2$,
+
+$Z_2$ - кільце цілих 2-адичних чисел.
+\end{definition}
+
 \begin{lemma}\label{nul_epsilon}
+Для $p\in Z_2$ має місце рівність:
    $$0*\varepsilon^p=p$$
 \end{lemma}
 \begin{proof}
 Оскільки $t*\varepsilon^p = t+p$, то $0*\varepsilon^p = 0+p = p $.
 \end{proof}
 
-\begin{theorem}
+\begin{theorem}\label{nul_action_all}
   Нехай $\chi_x$ - 0-розв'язок рівняння спряженості $\varepsilon^t = x$ відносно автоморфізма t. Тоді має місце рівність:
    $$0*x^p=p*\chi_x$$
 \end{theorem}
@@ -531,17 +542,66 @@ $$x^p = (\chi_x^{-1}\circ\varepsilon\circ\chi_x)^p=\chi_x^{-1}\circ\varepsilon^p
 $$0*x^p=0*(\chi_x^{-1}\circ\varepsilon^p\circ\chi_x) = ((0*\chi_x^{-1})*\varepsilon^p)*\chi_x) = (0*\varepsilon^p)*\chi_x =  p*\chi_x$$  ч.т.д.
 \end{proof}
 
-Легко бачити, що має місце наступна лема:
+Має місце наступна лема:
  \begin{lemma} Нехай $x$ - шарово-транзитивний автоморфізм. Тоді
  $$0*C_{AutT_2}(x)=Z_2 $$
   \end{lemma}
   \begin{proof}
+За теоремою \ref{SPTR_centralizer} $$C_{AutT_2}(x)=\{x^p|p\in Z_2\}$$ Далі, скориставшись теоремою \ref{nul_action_all}, маємо: $$0*x^{Z_2}=Z_2*\chi_x$$
+де  $\chi_x$ - 0-розв'язок рівняння спряженості $\varepsilon^t = x$ відносно автоморфізма t. 
+
+Оскільки $\chi_x$ - автоморфізм, то $$Z_2*\chi_x = Z_2$$ ч.т.д.
   \end{proof}
 
-\begin{theorem}
+  \begin{definition}
+    Означимо множину $F_p ( p\in Z_2 )$ наступним чином:
+
+$p\in F_p$,
+
+якщо $2t+1\in F_p$, то $t\in F_p, t+1\in F_p $,
+
+якщо $2t\in F_p$, то $t\in F_p $.
+ \end{definition}
+
+\begin{lemma}
+  Множина $F_p$ скінченна тоді, і тільки тоді, коли $p$ - квазіперіодичне число.
+\end{lemma}
+\begin{proof}
+
+  $\Rightarrow$ Для $2t+1$ та $2t$ число $t$ отримується відкиданням останьої цифри у двійковому запису, отже $F_p$ містить всі числа,  що отримуються з   $p$ відкиданням декількох останніх цифр. Якщо $p$ не квазіперіодичне, то маємо нескінченну кількість таких чисел, тому  $F_p$ не є скінченною.
+
+ $\Leftarrow$ 
+\end{proof}
+
+ 
+\begin{theorem}\label{adding_machine_fs_centralizer}
    Нехай $\varepsilon$ - adding machine. Тоді
- $$C_{FAutT_2}(\varepsilon)=\{x^p|p\in Z_2 \cap \mathbb{Q}\} $$ 
+ $$C_{FAutT_2}(\varepsilon)=\{\varepsilon^p|p\in Z_2 \cap \mathbb{Q}\} $$ 
 \end{theorem}
+\begin{proof}
+  Оскільки має місце рівність
+$$C_{FAutT_2}(\varepsilon)=C_{AutT_2}(\varepsilon)\cap FAutT_2$$
+то, за теоремою \ref{SPTR_centralizer}, елементи централізатора $C_{FAutT_2}(\varepsilon)$ мають вигляд $\{\varepsilon^p|\varepsilon^p\in FAutT_2\}$. Легко бачити, якщо $p$ - не квазіперіодичне число, то $\varepsilon^p$ - нескінченно-становий, оскільки переводить квазіперіодичне число 0 в не квазіперіодичне число  $p$.
+\end{proof}
+
+ \begin{theorem} \label{adding_machine_fs_orbite}
+Нехай $\varepsilon$ - adding machine. Тоді
+ $$0*C_{FAutT_2}(\varepsilon)=(Z_2 \cap \mathbb{Q})$$
+  \end{theorem}
+  \begin{proof}
+За теоремою \ref{adding_machine_fs_centralizer} $$C_{FAutT_2}(\varepsilon)=\{\varepsilon^p|p\in Z_2 \cap \mathbb{Q}\}$$ Далі, скориставшись лемою \ref{nul_epsilon}, маємо: $$0*\varepsilon^{Z_2 \cap \mathbb{Q}}=Z_2 \cap \mathbb{Q}$$
+ч.т.д.
+  \end{proof}
+
+Теореми \ref{adding_machine_fs_centralizer} та  \ref{adding_machine_fs_orbite}   можна застосувати для дослідження скінченно-станової спряженності
+ з автоморфізмом $\varepsilon$ - adding machine. Це показує наступна теорема:
+
+\begin{theorem}
+  Якщо 0-розв'язок рівняння спряженності $$\varepsilon^t=a$$ не є скінченно-становим, то це рівняння не має скінченно-станових розв'язків.
+\end{theorem}
+\begin{proof}
+  
+\end{proof}
 
 \begin{theorem}
    Нехай $x$ - шарово-транзитивний автоморфізм. Тоді
@@ -549,7 +609,7 @@ $$0*x^p=0*(\chi_x^{-1}\circ\varepsilon^p\circ\chi_x) = ((0*\chi_x^{-1})*\varepsi
 \end{theorem}
 
  
-  \begin{definition} Означимо функцію $h_x:C_{AutZ_2}(x)\rightarrow Z_2$, де $x$ - шарово-транзитивний скінченностановий автоморфізм, наступним чином: $h_x(u)=0*u$.
+  \begin{definition} Означимо функцію $h_x:C_{AutZ_2}(x)\rightarrow Z_2$, де $x$ - шарово-транзитивний скінченностановий автоморфізм, наступним чином: $$h_x(u)=0*u$$
  \end{definition}
 
  Зауважимо, що згідно з означенням
@@ -557,11 +617,6 @@ $$0*x^p=0*(\chi_x^{-1}\circ\varepsilon^p\circ\chi_x) = ((0*\chi_x^{-1})*\varepsi
  \begin{theorem} Скінченностановий автоморфізм $x$ є шарово-транзитивним тоді, і тільки тоді, коли
  $h_x:C_{AutT_2}(x)\rightarrow Z_2$ - бієкція.
  \end{theorem}
-
- \begin{theorem} Нехай $\varepsilon$ - adding machine. Тоді
- $$0*C_{FAutT_2}(\varepsilon)=(Z_2 \cap \mathbb{Q})$$
-  \end{theorem}
-
 
   \begin{definition}
  Означимо функцію $Log_x:C_{AutZ_2}(x) \rightarrow Z_2$, де $x$ - шарово-транзитивний скінченно-становий автоморфізм, наступним чином: $Log_x(u)=t$ для $u=x^t$.
