@@ -608,17 +608,22 @@ $m\in P_{m,n}$,
  \end{definition}
 
  \begin{lemma}
-   Нехай  2-адичне квазіперіодичне число  $p$ дорівнює $\frac{m}{n}$, де $ m\in \mathbb{Z}, n\in 2\{\mathbb{Z}^+\cup 0\}+1$. Тоді множини $P_{m,n}$ та  $F_p $ скінченно-станові одночасно.
+   Нехай  2-адичне квазіперіодичне число  $p$ дорівнює $\frac{m}{2n+1}$, де $ m\in \mathbb{Z}, n\in \mathbb{Z}^+\cup 0$. Тоді множини $P_{m,n}$ та  $F_p $ скінченні або нескінченні одночасно.
  \end{lemma}
  \begin{proof}
    
  \end{proof}
 
  \begin{lemma}
-   Множина $P_{p,n} ( p\in \mathbb{Z}, n\in 2\{\mathbb{Z}^+\cup 0\}+1 )$ є скінченою.
+   Множина $P_{m,n} ( m\in \mathbb{Z}, n\in 2\{\mathbb{Z}^+\cup 0\}+1 )$ є скінченою.
  \end{lemma}
  \begin{proof}
-   Згідно з означенням, якщо $t\in P_{m,n}$, то або $\frac{t}{2}$ або $\frac{t}{2}$ та $\frac{t}{2}$
+   Згідно з означенням, якщо $t\in P_{m,n}$, то або $\frac{t}{2}$ або $\frac{t-1}{2}-n$ та $\frac{t-1}{2}+n+1$. Будемо казати, що $t_k$
+відноситься до $k$-го рівня в $P_{m,n}$, якщо  $t_k$ можна отримати з $m$ за $k$ кроків.
+$$t_k = \frac{t_{k-1}+a*(2n+1)}{2}, a=0,1,-1$$
+$$t_k = \frac{m}{2^k}+(2n+1)(\frac{a_0}{2^k}+\dots+\frac{a_{k-1}}{2})$$
+$$|t_k| = \left| \frac{m}{2^k}+(2n+1)(\frac{a_0}{2^k}+\dots+\frac{a_{k-1}}{2})\right|\leq \left| \frac{m}{2^k}\right|+|2n+1|\leq |m|+2n+1$$
+$$\left|P_{m,n}\right|\leq 2(|m|+2n+1)$$
  \end{proof}
 
 \begin{lemma}
