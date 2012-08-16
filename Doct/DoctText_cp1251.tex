@@ -682,19 +682,31 @@ $$\varepsilon^{2t} = (\varepsilon^t,\varepsilon^t)$$
  з автоморфізмом $\varepsilon$ - adding machine. Це показує наступна теорема:
 
 \begin{theorem}
-  Якщо 0-розв'язок рівняння спряженності відносно $t$
+  Якщо 0-розв'язок $t_0$ рівняння спряженності відносно $t$
  $$\varepsilon^t=a$$
  не є скінченно-становим, то це рівняння не має скінченно-станових розв'язків.
 \end{theorem}
 \begin{proof}
-  
+  Припустимо, що $t_0$ - нескінченно-становий, а рівняння $\varepsilon^t=a$ має скінченно-становий розв'язок $t':p\rightarrow 0$, де $p$ - квазіперіодичне число. Оскільки кожен розв'язок єдиним чином можна представити у вигляді $$t' = x\circ t_0, x \in C_{FAutT_2}(\varepsilon)$$ та $p*\varepsilon^{-p}= 0$, то за теоремою \ref{adding_machine_fs_centralizer} $t' = \varepsilon^{-p}\circ t_0 $. Оскільки $t_0$ - нескінченно-становий, а $\varepsilon^{-p}$ - скінченно-становий, то  $t'$ - нескінченно-становий. Отже маємо протиріччя.
 \end{proof}
 
-\begin{theorem}
-   Нехай $x$ - шарово-транзитивний автоморфізм. Тоді
- $$C_{FAutT_2}(x) \subseteq \{x^{(p*\chi _{\varepsilon}^{-1})}|p\in Z_2 \cap \mathbb{Q}\} $$ 
-\end{theorem}
-
+\begin{theorem}\label{include_centralizer}
+   Нехай $a$ - шарово-транзитивний автоморфізм. Тоді
+ $$C_{FAutT_2}(a) \subseteq \{a^{(p*\chi_{a}^{-1})}|p\in Z_2 \cap \mathbb{Q}\} $$ 
+де $\chi_a$ - 0-розв'язок рівняння спряженності $\varepsilon^t=a$ відносно $t$.
+ \end{theorem}
+\begin{proof}
+  Має місце наступна рівність:
+$$0*a^{(p*\chi _{a}^{-1})} = p $$ 
+Дійсно, за теоремою  \ref{nul_action_all} отримаємо:
+$$0*a^{(p*\chi _{a}^{-1})} = (p*\chi_{a}^{-1})*\chi_{a} = p*(\chi_{a}^{-1})\circ \chi_a) = p $$ 
+Отже $a^{(p*\chi _{a}^{-1})}$ може бути скінченно-становим тільки тоді, коли $p\in Z_2 \cap \mathbb{Q} $. З іншої сторони
+за теоремою \ref{SPTR_centralizer} усі елементи централізатора $C_{AutT_2}(a)$ мають вигляд $a^{(p*\chi _{a}^{-1})}$, оскільки $\chi_a^{-1}$ - автоморфізм $Z_2$. Приймаючи до уваги, що
+$$C_{FAutT_2}(a) = C_{AutT_2}(a)\cap FAutT_2$$
+отримуємо включення
+ $$C_{FAutT_2}(a) \subseteq \{a^{(p*\chi_{a}^{-1})}|p\in Z_2 \cap \mathbb{Q}\} $$ 
+ч.т.д.
+\end{proof}
  
   \begin{definition} Означимо функцію $h_x:C_{AutZ_2}(x)\rightarrow Z_2$, де $x$ - шарово-транзитивний скінченностановий автоморфізм, наступним чином: $$h_x(u)=0*u$$
  \end{definition}
@@ -712,7 +724,10 @@ $$\varepsilon^{2t} = (\varepsilon^t,\varepsilon^t)$$
    \begin{theorem} Нехай $x$ - шарово-транзитивний скінченностановий автоморфізм. Тоді
  $$0*C_{FAutT_2}(x)\subseteq(Z_2 \cap \mathbb{Q})$$
  \end{theorem}
-
+ \begin{proof}
+   Згідно з теоремою \ref{include_centralizer} маємо включення:
+$$0*C_{FAutT_2}(x)\subseteq \{0*a^{(p*\chi_{a}^{-1})}|p\in Z_2 \cap \mathbb{Q}\} = Z_2 \cap \mathbb{Q}$$
+ \end{proof}
 
 
  \begin{theorem} Нехай $x$ - шарово-транзитивний скінченностановий автоморфізм. Тоді
@@ -998,7 +1013,7 @@ $b=(t,t^{-1}\circ b)\circ \sigma$. Оскільки $t\circ
   то його права проекція $\pi _R(a)=a\circ t$ є скінченно-становим
   автоморфізмом, і тому автоморфізм $$t = a^{-1}\circ (a\circ t) =
   a^{-1}\circ \pi _R(a) $$ також є скінченно-становим. Але ця умова не
-  є достатньою. Це показує наступні теорема та приклад:
+  є достатньою. Це показують наступні теорема та приклад:
 
   \begin{theorem}
     \label{aat}
