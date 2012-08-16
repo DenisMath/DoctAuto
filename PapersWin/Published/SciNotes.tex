@@ -1,0 +1,162 @@
+\documentclass[10pt,a4paper,twoside]{article}% параметры страницы
+\setlength\textwidth\paperwidth \setlength\textheight\paperheight
+\setlength\oddsidemargin{26mm} \setlength\evensidemargin{26mm}
+\addtolength\textwidth{-\oddsidemargin}
+\addtolength\textwidth{-\evensidemargin}
+\addtolength\oddsidemargin{-1in}\addtolength\evensidemargin{-1in}
+\addtolength\textheight{-27mm}\addtolength\textheight{-35mm}
+\setlength\topmargin{20mm}\addtolength\topmargin{-1 in}
+\setlength\headsep{5mm} \setlength\footskip{5mm}
+\renewcommand{\baselinestretch}{1}
+
+\usepackage[T2A]{fontenc}
+\usepackage[cp1251]{inputenc}
+%\usepackage[russian]{babel}
+\usepackage[ukrainian]{babel}
+
+\usepackage[bf,compact]{titlesec}
+\usepackage{multicol}
+\usepackage{indentfirst}
+%\usepackage{pscyr}
+\renewcommand{\rmdefault}{ftm}
+\renewcommand{\sfdefault}{fha}
+
+\usepackage[psamsfonts]{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsopn}
+\usepackage{amscd}
+\usepackage{latexsym}
+\usepackage{enumerate}
+
+\usepackage[dvips]{color}
+\definecolor{TitleGray}{gray}{0.85}
+
+%
+%
+\renewcommand{\qedsymbol}{}   %Не выводить в конце доказательства традиционный квадратик
+%\raggedcolumns
+\setlength{\multicolsep}{0mm}             % расстояние между колонками
+\setlength{\columnsep}{4.5mm}             % расстояние между колонками
+\setlength{\parindent}{5mm}             % отступ абзаца
+
+% стили страницы
+\renewpagestyle{empty}[\footnotesize\upshape]{
+  \setfoot{\copyright\ \textit{\authors}, 2009}{}{}}
+\renewpagestyle{myheadings}[\footnotesize\upshape]{
+  \headrule
+  \sethead[\normalsize\usepage][][\journalname]
+  {\textit{\authors}\; \smalltitletext}{}{\normalsize\usepage}}
+%\renewpagestyle{myheadings}[\footnotesize\upshape]{
+%  \sethead[][][]
+%  {}{}{}}
+\renewpagestyle{headings}[\footnotesize\upshape]{
+  \headrule
+  \sethead[\normalsize\usepage][][\journalname]
+  {\textit{\authors.}\; \smalltitletext}{}{\normalsize\usepage}
+  \setfoot{\copyright\ \textit{\authors}, 2009}{}{}}
+
+\newcommand{\HistPart}{\noindent
+{\Large\bfseries\colorbox{TitleGray}{\raisebox{0pt}[6mm][3mm]
+{\makebox[\textwidth][c]{\textsf{ІСТОРІЯ НАУКИ, НАУКОЗНАВСТВО}}}}
+
+}\vspace{29mm}}
+\newcommand{\MathPart}{\noindent
+{\Large\bfseries\colorbox{TitleGray}{\raisebox{0pt}[6mm][3mm]
+{\makebox[\textwidth][c]{\textbf{МАТЕМАТИКА}}}}
+
+}\vspace{29mm}}
+\newcommand{\PhysPart}{\noindent
+{\Large\bfseries\colorbox{TitleGray}{\raisebox{0pt}[6mm][3mm]
+{\makebox[\textwidth][c]{\textsf{ФІЗИКА}}}}
+
+}\vspace{29mm}}
+
+\renewcommand{\maketitle}{
+\noindent{\fontsize{11pt}{13pt}\selectfont \UDK} \vspace{8pt}
+
+\noindent{\fontsize{13pt}{15.5pt}\selectfont \textit{\authors}}
+\vspace{16pt}
+
+\noindent{\fontsize{14.5pt}{17pt}\selectfont \centering \bfseries
+\titletext
+
+} \vspace{12pt}
+
+{\normalsize \itshape \abstracttext
+
+} \vspace{12pt} \normalsize }
+
+\newcommand{\makeendtitle}{
+\vspace{24pt} \noindent{\large \textit{\authorsAlt}}
+\vspace*{12pt}
+
+\noindent{\large \centering \bfseries
+\titletextAlt
+
+} \vspace{12pt}
+
+{\normalsize \itshape \abstracttextAlt
+
+} \normalsize }
+
+% стили заголовка типа раздел и подраздел
+\titleformat{\section}{\bfseries\centering}{}{0pt}{}
+\titlespacing{\section}{0pt}{3ex}{2ex}[0pt]
+\titleformat{\subsection}[runin]{\normalfont\itshape\bfseries\raggedright}{}{0pt}{}
+\titlespacing{\subsection}{\parindent}{2ex}{0pt}
+%\raggedcolumns
+\raggedbottom
+
+% перенос некоторых знаков (+, -, =, \cdot, \times, \equiv, \in, \sim, \simeq)
+% на новую строку с удвоением
+%\begingroup
+%\catcode`\+\active\gdef+{\mathchar8235\nobreak\discretionary{}%
+% {\usefont{OT1}{cmr}{m}{n}\char43}{}}
+%\catcode`\-\active\gdef-{\mathchar8704\nobreak\discretionary{}%
+% {\usefont{OMS}{cmsy}{m}{n}\char0}{}}
+%\catcode`\=\active\gdef={\mathchar12349\nobreak\discretionary{}%
+% {\usefont{OT1}{cmr}{m}{n}\char61}{}}
+%\endgroup
+%\mathcode`\==32768 \mathcode`\+=32768 \mathcode`\-=32768
+%\def\cdot{\mathchar8705\nobreak\discretionary{}%
+% {\usefont{OMS}{cmsy}{m}{n}\char1}{}}
+%\def\times{\mathchar8706\nobreak\discretionary{}%
+% {\usefont{OMS}{cmsy}{m}{n}\char2}{}}
+%\def\equiv{\mathchar8721\nobreak\discretionary{}%
+% {\usefont{OMS}{cmsy}{m}{n}\char17}{}}
+%\def\in{\mathchar8754\nobreak\discretionary{}%
+% {\usefont{OMS}{cmsy}{m}{n}\char50}{}}
+%\def\sim{\mathchar8728\nobreak\discretionary{}%
+% {\usefont{OMS}{cmsy}{m}{n}\char24}{}}
+%\def\simeq{\mathchar8743\nobreak\discretionary{}%
+% {\usefont{OMS}{cmsy}{m}{n}\char39}{}}
+%\def\le{\mathchar8724\nobreak\discretionary{}%
+% {\usefont{OMS}{cmsy}{m}{n}\char20}{}}
+
+% Строка заголовка над литературой отсутсвует.
+\makeatletter
+\renewenvironment{thebibliography}[1]
+     {\list{\@biblabel{\@arabic\c@enumiv}}%
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin\labelsep
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+\makeatother
+
+% нумерация в списке литературы 1.
+\makeatletter
+\def\@biblabel#1{#1.}
+\makeatother
