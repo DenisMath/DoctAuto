@@ -160,19 +160,23 @@ E-mail: denis.morozov178@gmail.com
 \begin{defi}
  Позначимо як:
 
-$x*a$ - ліву дію автоморфізма $a$ на кінець $x$ дерева $T_2$,
+$x*a$ -  дію автоморфізма $a$ на кінець $x$ дерева $T_2$,
 
 $a\circ b$ - суперпозицію автоморфізів $a$ та $b$ дерева $T_2$,
 
 $Z_2$ - кільце цілих 2-адичних чисел.
 \end{defi}
 
+Нехай $\varepsilon$ - двостановий автоморфізм adding machine, що задається співвідношеннями:
+$$\varepsilon = (id, \varepsilon)\circ \sigma$$ 
+$$ id = (id, id)$$ 
+
 \begin{lemma}\label{nul_epsilon}
-Для $p\in Z_2$ має місце рівність:
+ Для $p\in Z_2$ має місце рівність:
    $$0*\varepsilon^p=p$$
 \end{lemma}
 \begin{proo}
-Оскільки $t*\varepsilon^p = t+p$, то $0*\varepsilon^p = 0+p = p $.
+ Оскільки $t*\varepsilon^p = t+p$, то $0*\varepsilon^p = 0+p = p$.
 \end{proo}
 
 \begin{thm}\label{nul_action_all}
