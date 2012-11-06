@@ -57,3 +57,35 @@
 (setq inferior-fsharp-program "\"c:\\Program Files\\Microsoft F#\\v4.0\\Fsi.exe\"")
 (setq fsharp-compiler "\"c:\\Program Files\\Microsoft F#\\v4.0\\Fsc.exe\"")
 
+;; aspell
+(custom-set-variables
+    '(ispell-program-name "C:\\Program Files\\Aspell\\bin\\aspell.exe"))
+(require 'flyspell)
+(require 'ispell)
+
+(setq
+ ispell-program-name "C:\\Program Files\\Aspell\\bin\\aspell.exe"
+ ispell-extra-args '("--sug-mode=ultra"))
+
+(setq ispell-highlight-face (quote flyspell-incorrect))
+(setq ispell-have-new-look t)
+(setq ispell-enable-tex-parser t)
+(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'latex-mode-hook 'flyspell-mode)
+(setq flyspell-delay 1)
+(setq flyspell-always-use-popup t)
+
+(setq flyspell-issue-welcome-flag nil)
+    ;;============================================================================
+(setq ispell-dictionary-base-alist (cons
+ '("ukrainian"
+   "[абвгдґеєжзиіїйклмнопрстуфхцчшщьюяАБВГДҐЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ]"
+   "[^абвгдґеєжзиіїйклмнопрстуфхцчшщьюяАБВГДҐЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ]"
+   "[-']"
+   nil
+   ("-C" "-d" "ukrainian")
+   nil koi8-u
+   ) ispell-dictionary-base-alist))
+(setq  ispell-menu-map-needed t)
+(setq  ispell-menu-map nil)
+;;(load "ispell")  ; reload ISPELL
