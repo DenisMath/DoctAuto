@@ -1,0 +1,32 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{a4wide}
+\usepackage[cp1251]{inputenc}
+\usepackage[english,russian,ukrainian]{babel}
+\usepackage{amsfonts,amssymb,amsmath,amsthm,amscd,latexsym}
+\usepackage{graphicx}
+%\usepackage[matrix,arrow,curve]{xy}
+%\pagestyle{headings}
+\usepackage{fancyhdr}
+\fancyfoot{} \rhead{\thepage} \cfoot{} \lhead{}
+\renewcommand{\headrulewidth }{ 0pt}
+\pagestyle{fancy} \sloppy
+\parindent = 1 cm
+\topmargin - 16mm \textwidth  160mm \textheight 250mm
+\oddsidemargin 10mm \evensidemargin 7mm
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}%
+{\hbox{$\mathsurround=0pt #1$}}{}}
+\newcommand{\bb}[1]{{\bf #1}}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\numberwithin{equation}{subsection}
+\newtheorem{theorem}{Теорема}[subsection]
+\newtheorem{lemma}{Лема}[subsection]
+\newtheorem{corollary}{Наслідок}[subsection]
+\newtheorem{remark}{Зауваження}[subsection]
+\newtheorem{definition}{Означення}[subsection]
+\newtheorem{example}{Приклад}[subsection]
+\newtheorem{hyp}{Гіпотеза}[subsection]
+\renewcommand{\baselinestretch}{1.5}
+
+\begin{document}
+new \LaTeX\ paper
+\end{document}
