@@ -1,0 +1,388 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[cp1251]{inputenc}
+\usepackage[ukrainian,english]{babel}
+\usepackage{amssymb,upref}
+\usepackage{amsmath,amsthm}
+\usepackage{multicol}
+\usepackage{geometry}
+\usepackage[dvips]{graphicx}
+\geometry{hmargin={2.0cm,2.0cm},vmargin={2.5cm,2.5cm},headheight=24pt}%
+\usepackage{fancyhdr}
+\pagestyle{fancy}%
+\lhead{\footnotesize\itshape Вісник Київського університету\\Серія: фізико-математичні науки}%
+\chead{\footnotesize\bfseries 2012, 2\\}%
+\rhead{\footnotesize\itshape Bulletin of University of Kyiv\\Series: Physics {\slshape\&} Mathematics}%
+\renewcommand{\headrulewidth}{0pt}
+\lfoot{}\cfoot{}\rfoot{}%
+\fancypagestyle{plain}{%
+\lfoot{\footnotesize \copyright\ D.I.~Morozov, 2012}%
+}
+
+\setlength{\parindent}{7mm}
+
+\makeatletter
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {-3.5ex \@plus -1ex \@minus -.2ex}%
+                                   {2.3ex \@plus.2ex}%
+                                   {\normalfont\bfseries}}
+\def\@biblabel#1{#1.}
+\makeatother
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lemma}{Lema}
+\newtheorem{proposition}{Proposition}
+\newtheorem{cor}{Corollary}
+\newtheorem{rem}{Remark}
+\newtheorem*{proo}{Proof}
+\newtheoremstyle{definition}
+  {}
+  {}
+  {}
+  {}
+  {\itshape}
+  {.}
+  {.5em}
+  {}
+\theoremstyle{definition}
+\newtheorem{defi}{Definition}[section]
+\newtheorem{ex}{Example}
+
+\newcommand{\sub}{Sub_\varphi(\Omega)}
+\newcommand{\SSub}{\mathrm{SSub}}
+
+\newcommand{\E}{\textsf E}
+\newcommand{\R}{\mathbb{R}}
+\renewcommand{\P}{\mathbf{P}}
+\newcommand{\pr}{\mathbf{P}}
+
+\newcommand{\N}{\textit{\textsf{N}}}
+\renewcommand{\H}{\textit{\textsf{H}}}
+\renewcommand{\d}{\,\mathrm{d}}
+
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Wr}{\mathop{\font\xx=cmsy10 at 18pt \hbox{\xx \char111}}}
+
+\newcommand{\uu}{\mathrm{u}}
+%\let\subgroupeq\leqslant
+%\let\supgroupeq\geqslant
+%\DeclareMathOperator*{\X}{\times}
+
+\let\le\leqslant
+\let\leq\leqslant
+\let\ge\geqslant
+\let\geq\geqslant
+
+\def\labelenumi{\theenumi)}
+
+
+\begin{document}
+\thispagestyle{plain}
+
+УДК 512.54
+
+\setlength{\columnsep}{7mm}%
+\setlength{\columnseprule}{.4pt}
+\begin{multicols}{2}
+
+\begin{flushleft}
+D.I.~Morozov, researcher working on habilitation.\\
+\vspace{0.5cm}
+
+{\bfseries Centralizers of  spherical-transitive elements in the group of finite-state automorphisms of binary rooted tree}
+\end{flushleft}
+
+\medskip
+
+{\itshape In this work the centralizer of  spherical-transitive finite-state automorphisms investigated.\\
+
+\bigskip
+
+
+Key Words: rooted tree, automorphism group, state,
+centralizer.\\
+\vfill
+}
+
+
+
+{\selectlanguage{ukrainian}
+
+\begin{flushleft}
+Д.І.~Морозов, докторант.\\
+
+\vspace{0.5cm}
+
+{\bfseries Централізатори шарово-транзитивних елементів в групі скінченно-станових автоморфізмів бінарного кореневого дерева  }
+
+
+\end{flushleft}
+
+\medskip
+
+{\itshape В роботі досліджено централізатори шарово-транзитивних скінченно-станових автоморфізмів.\\
+
+
+Ключові слова: кореневе дерево, група автоморфізмів, стан, централізатор.}
+
+\bigskip
+
+}
+
+\end{multicols}
+
+E-mail: denis.morozov178@gmail.com
+
+Статтю представив доктор фіз.-мат. наук Боднарчук Ю.В. %
+
+
+\setlength{\columnsep}{4mm}%
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+\section{Introduction}
+
+
+In this paper, we use the following definitions:
+
+\begin{defi}
+
+
+$ T_2 $ - binary rooted tree,
+
+
+$ AutT_2 $ - group of automorphisms of $ T_2 $,
+
+
+$ FAutT_2 $ - group of finite-state automorphisms $ T_2 $,
+
+
+$ x * a $ - action of the automorphisms $ a $ on the end $ x $ of the tree $ T_2 $,
+
+
+$ a \circ b $ - superposition of automorphisms $ a $ and $ b $ of the tree $ T_2 $,
+
+
+$ Z_2 $ - ring of integer 2-adic numbers
+
+
+We say that an automorphism $ \chi_0 $ is 0 -~solution of the equation $ a ^ {\chi_0} = b $, if $ 0 * \chi_0 = 0 $
+\end{defi}
+
+
+
+We identify automorphism $ a $ tree $ T_2 $ with the function $ f_a: Z_2 \rightarrow Z_2 $ as follows:
+$$ x * a = f_a (x) $$
+
+In the paper \cite{Z} author has proved the following theorem:
+
+ 
+
+\begin{thm}\label{SPTR_centralizer}
+    Let $ x $ - spherical-transitive automorphism, then
+  $$ C_{AutT_2}(x) = \{x^p | p \ in Z_2 \} $$
+  \end{thm}
+
+The aim of this work is to study the centraliser of spherical-transitive elements in $ FAutT_2 $, because there are no results such as theorem \ref {SPTR_centralizer} for $ FAutT_2 $ .
+
+
+
+ \section{Centralizers of  spherical-transitive elements in $FAutT_2$}
+
+Let $\varepsilon$ - adding machine, that is $x*\varepsilon = x+1$. Then there is the following lemma:
+\begin{lemma}\label{nul_epsilon}
+ For $p\in Z_2$ we have the following equation:
+   $$0*\varepsilon^p=p$$
+\end{lemma}
+\begin{proo}
+Since $t*\varepsilon^p = t+p$, then $0*\varepsilon^p = 0+p = p $.
+\end{proo}
+
+\begin{thm}\label{nul_action_all}
+  Let $\chi_x$ - 0 -~solution of the equation  $\varepsilon^t = x$ relatively automorphism t. Then there is the equation:
+   $$0*x^p=p*\chi_x$$
+\end{thm}
+\begin{proo}
+Since  $\varepsilon^{\chi_x} = x$, then:
+$$x^p = (\chi_x^{-1}\circ\varepsilon\circ\chi_x)^p=\chi_x^{-1}\circ\varepsilon^p\circ\chi_x$$
+
+So by lemma \ref{nul_epsilon} and equity $ 0 * \chi_x = 0 $ we get:
+
+$$0*x^p=0*(\chi_x^{-1}\circ\varepsilon^p\circ\chi_x) = $$ $$=((0*\chi_x^{-1})*\varepsilon^p)*\chi_x) = (0*\varepsilon^p)*\chi_x =  p*\chi_x$$  q.e.d.
+\end{proo}
+
+We have the following lemma:
+
+ \begin{lemma} Let $x$ -spherical-transitive automorphisms. Then
+ $$0*C_{AutT_2}(x)=Z_2 $$
+  \end{lemma}
+  \begin{proo}
+За теоремою \ref{SPTR_centralizer} $$C_{AutT_2}(x)=\{x^p|p\in Z_2\}$$ Далі, скориставшись теоремою \ref{nul_action_all}, маємо: $$0*x^{Z_2}=Z_2*\chi_x$$
+де  $\chi_x$ - 0-розв'язок рівняння спряженості $\varepsilon^t = x$ відносно автоморфізма t. 
+
+Оскільки $\chi_x$ - автоморфізм, то $$Z_2*\chi_x = Z_2$$ щ.т.д.
+  \end{proo}
+
+  \begin{defi}
+    Означимо множину $F_p ( p\in Z_2 )$ наступним чином:
+
+$p\in F_p$,
+
+якщо $2t+1\in F_p$, то $t\in F_p, t+1\in F_p $,
+
+якщо $2t\in F_p$, то $t\in F_p $.
+
+Будемо казати, що $t_k$ належить k-му рівню в $F_p$, якщо отримано з $p$ за k кроків.
+ \end{defi}
+
+ \begin{defi}
+     Означимо множину $P_{m,n} ( m\in \mathbb{Z}, n\in \mathbb{Z}^+\cup 0 )$ наступним чином:
+
+$m\in P_{m,n}$,
+
+якщо $2t+1\in P_{m,n}$, то $t - n\in P_{m,n},\  t+n+1\in P_{m,n} $,
+
+якщо $2t\in P_{m,n}$, то $t\in P_{m,n} $.
+
+Будемо казати, що $t_k$ належить k-му рівню в $P_{m,n}$, якщо отримано з $m$ за k кроків.
+ \end{defi}
+
+ \begin{lemma}\label{F_P_equal}
+   Нехай  2-адичне квазіперіодичне число  $p$ дорівнює $\frac{m}{2n+1}$, де $ m\in \mathbb{Z}, n\in \mathbb{Z}^+\cup 0$. Тоді множини $P_{m,n}$ та  $F_p $ скінчені або нескінчені одночасно.
+ \end{lemma}
+ \begin{proo}
+Оскільки мають місце рівності:
+   $$\frac{2m+1}{2n+1}=2\frac{m-n}{2n+1}+1$$
+   $$\frac{2m}{2n+1}=2\frac{m}{2n+1}$$
+то в $F_p$ $\frac{2m+1}{2n+1}$ породжує $\frac{m-n}{2n+1}$ та  $\frac{m+n+1}{2n+1}$, а $\frac{2m}{2n+1}$ породжує $\frac{m}{2n+1}$.
+
+Отже, якщо $t_k$ належить k-му рівню в $F_p$, то $t_k(2n+1)$  належить k-му рівню в $P_{m,n}$, і навпаки,  якщо $t_k'$ належить k-му рівню в  $P_{m,n}$, то $\frac{t_k'}{2n+1}$ належить k-му рівню в  $F_p$. Тому має місце рівність:
+$$|P_{m,n}| = |F_p|$$
+щ.т.д.
+ \end{proo}
+
+ \begin{lemma}\label{P_finite}
+   Множина $P_{m,n} ( m\in \mathbb{Z}, n\in \mathbb{Z}^+\cup 0 )$ є скінченною.
+ \end{lemma}
+ \begin{proo}
+   Згідно з означенням, якщо $t\in P_{m,n}$, то або $\frac{t}{2}$ або $\frac{t-1}{2}-n$ та $\frac{t-1}{2}+n+1$.Нехай $t_k$
+відноситься до $k$-го рівня в $P_{m,n}$, тоді має місце рівність:
+$$t_k = \frac{t_{k-1}+a*(2n+1)}{2}, a=0,1,-1$$
+Використавши цю рівність k  разів, отримаємо:
+$$t_k = \frac{m}{2^k}+(2n+1)(\frac{a_0}{2^k}+\dots+\frac{a_{k-1}}{2})$$
+Оскільки $|a_i|\leq 1$, то маємо наступну оцінку:
+$$|t_k| = \left| \frac{m}{2^k}+(2n+1)(\frac{a_0}{2^k}+\dots+\frac{a_{k-1}}{2})\right|\leq$$ $$\leq \left| \frac{m}{2^k}\right|+|2n+1|\leq |m|+2n+1$$
+Отже кількість елеметів в множині $P_{m,n}$ обмежено нерівністю:
+$$\left|P_{m,n}\right|\leq 2(|m|+2n+1)$$
+тому множина $P_{m,n}$ є скінченною, щ.т.д.
+ \end{proo}
+
+\begin{lemma}\label{F_finite}
+  Множина $F_p$ скінчена тоді, і тільки тоді, коли $p$ - квазіперіодичне число.
+\end{lemma}
+\begin{proo}
+
+  $\Rightarrow$ Для $2t+1$ та $2t$ число $t$ отримується відкиданням останьої цифри у двійковому запису, отже $F_p$ містить всі числа,  що отримуються з   $p$ відкиданням декількох останніх цифр. Якщо $p$ не квазіперіодичне, то маємо нескінчену кількість таких чисел, тому  $F_p$ не є скінченною.
+
+ $\Leftarrow$ $p$ - квазіперіодичне число тоді і лише тоді, коли $p=\frac{m}{2n+1} (m\in\mathbb{Z}, n\in \mathbb{Z}^+\cup 0)$.
+Отже за лемами \ref{F_P_equal} та \ref{P_finite} множина $F_p$  є скінченною.
+\end{proo}
+
+ 
+\begin{thm}\label{adding_machine_fs_centralizer}
+   Нехай $\varepsilon$ - adding machine. Тоді
+ $$C_{FAutT_2}(\varepsilon)=\{\varepsilon^p|p\in Z_2 \cap \mathbb{Q}\} $$ 
+\end{thm}
+\begin{proo}
+  Оскільки має місце рівність
+$$C_{FAutT_2}(\varepsilon)=C_{AutT_2}(\varepsilon)\cap FAutT_2$$
+то, за теоремою \ref{SPTR_centralizer}, елементи централізатора $C_{FAutT_2}(\varepsilon)$ мають вигляд $\{\varepsilon^p|\varepsilon^p\in FAutT_2\}$. Легко бачити, якщо $p$ - не квазіперіодичне число, то $\varepsilon^p$ - нескінченно-становий, оскільки переводить квазіперіодичне число 0 в не квазіперіодичне число  $p$.
+Далі, нехай $p\in Z_2 \cap \mathbb{Q}\}$, тобто квазіперіодичне. За лемою \ref{F_finite}  множина $F_p$ - скінчена. З іншої сторони, мають місце рівності:
+$$\varepsilon^{2t+1} = (\varepsilon^t,\varepsilon^{t+1})\circ \sigma$$
+$$\varepsilon^{2t} = (\varepsilon^t,\varepsilon^t)$$
+Отже стани автоморфізму $\varepsilon^{p}$ вичерпуються автоморфізмами вигляду $$\varepsilon^t, t\in F_p$$ 
+Оскільки $F_p$ - скінчена, то $\varepsilon^{p}$ - скінченно-становий автоморфізм, щ.т.д.
+\end{proo}
+
+ \begin{thm} \label{adding_machine_fs_orbite}
+Нехай $\varepsilon$ - adding machine. Тоді
+ $$0*C_{FAutT_2}(\varepsilon)=(Z_2 \cap \mathbb{Q})$$
+  \end{thm}
+  \begin{proo}
+За теоремою \ref{adding_machine_fs_centralizer} $$C_{FAutT_2}(\varepsilon)=\{\varepsilon^p|p\in Z_2 \cap \mathbb{Q}\}$$ Далі, скориставшись лемою \ref{nul_epsilon}, маємо: $$0*\varepsilon^{Z_2 \cap \mathbb{Q}}=Z_2 \cap \mathbb{Q}$$
+щ.т.д.
+  \end{proo}
+
+Теореми \ref{adding_machine_fs_centralizer} та  \ref{adding_machine_fs_orbite}   можна застосувати для дослідження скінченно-станової спряженності
+ з автоморфізмом $\varepsilon$ - adding machine. Це показує наступна теорема:
+
+\begin{thm}
+  Якщо 0-розв'язок $t_0$ рівняння спряженності відносно $t$
+ $$\varepsilon^t=a$$
+ не є скінченно-становим, то це рівняння не має скінченно-станових розв'язків.
+\end{thm}
+\begin{proo}
+  Припустимо, що $t_0$ - нескінченно-становий, а рівняння $\varepsilon^t=a$ має скінченно-становий розв'язок $t':p\rightarrow 0$, де $p$ - квазіперіодичне число. Оскільки кожен розв'язок єдиним чином можна представити у вигляді $$t' = x\circ t_0, x \in C_{FAutT_2}(\varepsilon)$$ та $p*\varepsilon^{-p}= 0$, то за теоремою \ref{adding_machine_fs_centralizer} $t' = \varepsilon^{-p}\circ t_0 $. Оскільки $t_0$ - нескінченно-становий, а $\varepsilon^{-p}$ - скінченно-становий, то  $t'$ - нескінченно-становий. Отже маємо протиріччя.
+\end{proo}
+
+\begin{thm}\label{include_centralizer}
+   Нехай $a$ - шарово-транзитивний автоморфізм. Тоді
+ $$C_{FAutT_2}(a) \subseteq \{a^{(p*\chi_{a}^{-1})}|p\in Z_2 \cap \mathbb{Q}\} $$ 
+де $\chi_a$ - 0-розв'язок рівняння спряженності $\varepsilon^t=a$ відносно $t$.
+ \end{thm}
+\begin{proo}
+  Має місце наступна рівність:
+$$0*a^{(p*\chi _{a}^{-1})} = p $$ 
+Дійсно, за теоремою  \ref{nul_action_all} отримаємо:
+$$0*a^{(p*\chi _{a}^{-1})} = (p*\chi_{a}^{-1})*\chi_{a} = p*(\chi_{a}^{-1}\circ \chi_a) = p $$ 
+Отже $a^{(p*\chi _{a}^{-1})}$ може бути скінченно-становим тільки тоді, коли $p\in Z_2 \cap \mathbb{Q} $. З іншої сторони
+за теоремою \ref{SPTR_centralizer} усі елементи централізатора $C_{AutT_2}(a)$ мають вигляд $a^{(p*\chi _{a}^{-1})}$, оскільки $\chi_a^{-1}$ - автоморфізм $Z_2$. Приймаючи до уваги, що
+$$C_{FAutT_2}(a) = C_{AutT_2}(a)\cap FAutT_2$$
+отримуємо включення
+ $$C_{FAutT_2}(a) \subseteq \{a^{(p*\chi_{a}^{-1})}|p\in Z_2 \cap \mathbb{Q}\} $$ 
+щ.т.д.
+\end{proo}
+ 
+ %  \begin{defi} Означимо функцію $h_x:C_{AutZ_2}(x)\rightarrow Z_2$, де $x$ - шарово-транзитивний скінченно-становий автоморфізм, наступним чином: $$h_x(u)=0*u$$
+ % \end{defi}
+
+ % Зауважимо, що згідно з означенням
+
+ % \begin{thm} Скінченно-становий автоморфізм $x$ є шарово-транзитивним тоді, і тільки тоді, коли
+ % $h_x:C_{AutT_2}(x)\rightarrow Z_2$ - бієкція.
+ % \end{thm}
+
+ 
+   \begin{thm} Нехай $x$ - шарово-транзитивний скінченно-становий автоморфізм. Тоді
+ $$0*C_{FAutT_2}(x)\subseteq(Z_2 \cap \mathbb{Q})$$
+ \end{thm}
+ \begin{proo}
+   Згідно з теоремою \ref{include_centralizer} маємо включення:
+$$0*C_{FAutT_2}(x)\subseteq \{0*a^{(p*\chi_{a}^{-1})}|p\in Z_2 \cap \mathbb{Q}\} = Z_2 \cap \mathbb{Q}$$
+ \end{proo}
+
+ 
+
+
+
+%\renewcommand{\refname}{Список використаних джерел}
+\begin{thebibliography}{00}
+%\addcontentsline{toc}{section}{Список використаних джерел}
+\makeatletter
+\renewcommand{\@biblabel}[1]{#1.\hfil}
+\makeatother
+
+\bibitem{Z} {\em Морозов Д.І.} Централiзатори  шарово-однорiдних  автоморфiзмiв однорiдного дерева валентностi p./ Д.І.~Морозов// Вiсник Київського  ун-ту.  Серiя:  фiзико-математичнi  науки.  -  2007.–  вип.№4  – C.52-54.  
+
+\end{thebibliography}
+
+
+\begin{flushright}
+Надійшла до редколегії 13.10.2012
+\end{flushright}
+\end{multicols}
+
+
+
+\end{document}
