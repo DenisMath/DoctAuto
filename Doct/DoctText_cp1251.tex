@@ -755,7 +755,7 @@ $$D_f*\alpha = D_g$$
  При ізоморфізмі $\alpha$ дерев $D_{(4k'+1)x+b}$ та $D_{(4k''+3)x+c}$  образ $v*\alpha \in D_{(4k''+3)x+c} $ цієї вершини  має такий самий індекс, як і $v$, і, за лемою \ref{marked_vertex_value}, автоморфізм, що помічає вершину  $v*\alpha$, має вигляд 
 $ (4k''+3)x+c' $.
 
- Але, за теоремою \ref{Spherical_lin_tree}, піддерево дерева типу $D_{(4k''+1)x+c}$ з коренем в вершині $v*\alpha$ не є ланцюгом. Отже маємо протиріччя.
+ Але, за теоремою \ref{Spherical_lin_tree}, дерево типу автоморфізму  піддерево дерева типу $D_{(4k''+3)x+c}$ з коренем в вершині $v*\alpha$ не є ланцюгом. Отже маємо протиріччя.
 
 
 
@@ -782,31 +782,103 @@ $ (4k''+3)x+c' $.
 
 \end{proof}
 
-\begin{lemma}\label{equal_coeff_type_tree}
-Два лінійних автоморфізми $f(x) = ax+2^r(2b+1)$ та $g(x) = ax+2^s(2d+1)$ мають неізоморфні дерева типу, якщо $r\neq s$.
-\end{lemma}
-\begin{proof}
-\end{proof}
 
-\begin{theorem}\label{final_lin_conj}
-Два лінійних автоморфізми $f(x) = ax+2^r(2b+1)$ та $g(x) = cx+2^s(2d+1)$ спряжені тоді, і лише тоді, коли $a=c$ та $r = s$.
+\begin{theorem}\label{power_two_lin_conj}
+Два лінійних автоморфізми $f(x) = ax+2^r(2b+1)$ та $g(x) = cx+2^r(2d+1)$ спряжені тоді, і лише тоді, коли $a=c$.
 \end{theorem}
 \begin{proof}
 $\Rightarrow$ Нехай f та g - спряжені в $FAutT_2$. За теоремою \ref{lin_conj_rightarrow} - $a=c$.
 
-Оскільки дерева типу спряжених автоморфізмів ізоморфні, то за лемою \ref{equal_coeff_type_tree} -  $r = s$.
-
-$\Leftarrow$ Нехай $a=c$ та $r = s$. Тоді $ f(x) = ax+2^r(2b+1)$ та $ g(x) = cx+2^s(2d+1)$ спряжені скінчено-становим автоморфізмом $$\chi_0(x) = \left(\frac {2d+1}{2b+1}\right)x$$
+$\Leftarrow$ Нехай $a=c$. Тоді $ f(x) = ax+2^r(2b+1)$ та $ g(x) = cx+2^r(2d+1)$ спряжені скінчено-становим автоморфізмом $$\chi_0(x) = \left(\frac {2d+1}{2b+1}\right)x$$
 
 Дійсно
 $$ \chi_0^{-1}\circ f \circ \chi_0 = \left(\left(\frac{2b+1}{2d+1}\right)x\right) \circ (ax+2^r(2b+1)) \circ  \left(\left(\frac{2d+1}{2b+1}\right)x\right) = $$
 $$=  \left(a\left(\frac{2b+1}{2d+1}\right)x+2^r(2b+1)\right) \circ  \left(\left(\frac{2d+1}{2b+1}\right)x\right) = $$
 $$= \left(\frac{2d+1}{2b+1}\right)\left(a\left(\frac{2b+1}{2d+1}\right)x+2^r(2b+1)\right) =  ax+2^r(2d+1) = $$
-$$ = cx+2^s(2d+1)  $$
+$$ = cx+2^r(2d+1)  $$
 \end{proof}
 \begin{remark}
 За теоремою \ref{lin_conj_rightarrow} автоморфізми $f(x) = ax$ та $g(x) = cx$ спряжені тоді, і лише тоді, коли $a=c$ .
 \end{remark}
+
+
+\begin{theorem}\label{4kp1ConjFinal}
+Скінчено-станові автоморфізми $f(x)=(2^s(2k+1)+1)x + b_1$ та $g(x)=(2^s(2k+1)+1)x + b_2$, $s > 0$ спряжені в $FAutT_2$, якщо $ b_1 \equiv b_2 (\mod 2^s) $. 
+\end{theorem}
+\begin{proof}
+Оскільки $ b_1 \equiv b_2 (\mod 2^s) $, то
+ $$\frac{b_1-b_2}{2^s(2k+1)}\in Z_2$$
+
+Автоморфізми $f$ та $g$ спряжені в $FAutT_2$ за допомогою скінчено-станового автоморфізму
+ $$\chi(x) = x + \frac{b_1-b_2}{2^s(2k+1)}$$ 
+
+Дійсно, має місце наступна рівність:
+$$\chi ^{-1}\circ f \circ \chi  = (x - \frac{b_1-b_2}{2^s(2k+1)}) \circ ((2^s(2k+1)+1)x + b_1) \circ (x + \frac{b_1-b_2}{2^s(2k+1)}) =  $$
+$$= ((2^s(2k+1)+1)(x - \frac{b_1-b_2}{2^s(2k+1)}) + b_1) \circ (x + \frac{b_1-b_2}{2^s(2k+1)}) = $$
+$$ = (2^s(2k+1)+1)x - \frac{(2^s(2k+1)+1 - 1)(b_1-b_2)}{2^s(2k+1)} + b_1 =  (2^s(2k+1)+1)x + b_2 $$
+
+\end{proof}
+
+\begin{lemma}\label{4kp3PowerTwoConj}
+Скінчено-станові автоморфізми $f(x)=(4k+3)x + 2b_1$ та $g(x)=(4k+3)x + 2b_2$ спряжені в $FAutT_2$  
+\end{lemma}
+\begin{proof}
+Є наслідком теореми \ref{4kp1ConjFinal}.
+\end{proof}
+
+\begin{theorem}\label{4kp3ConjFinal}
+Скінчено-станові автоморфізми $f(x)=(4k+3)x + b_1$ та $g(x)=(4k+3)x + b_2$ спряжені в $FAutT_2$ тоді, і лише тоді, коли $ b_1 \equiv b_2 (\mod 2)$ 
+\end{theorem}
+\begin{proof}
+$\Leftarrow$ Згідно з лемою \ref{lin_states}, 1-й рівень дерева типу автоморфізму $ax+(2t+1)$ складається з однієї вершини, а 1-й рівень дерева типу автоморфізму $ax+2t$ складається з двох вершин. Отже автоморфізми  $f(x)=(4k+3)x + b_1$ та $g(x)=(4k+3)x + b_2$ не спряжені в $AutT_2$, а отже і в $FAutT_2$, якщо $ b_1 \not\equiv b_2 (\mod 2)$.
+
+
+$\Rightarrow$ За теоремою  \ref{power_two_lin_conj}  та лемою \ref{4kp3PowerTwoConj}.
+\end{proof}
+
+
+ \begin{theorem}\label{4kp1ConjNull}
+??? Скінчено-станові автоморфізми $f(x)=(4k+1)x + b$ та $g(x)=(4k+1)x$ не спряжені в $FAutT_2$, якщо $ b \neq 0 $. 
+\end{theorem}
+\begin{proof}
+$\Leftarrow$ Згідно з лемою \ref{lin_states}, 1-й рівень дерева типу автоморфізму $ax+(2t+1)$ складається з однієї вершини, а 1-й рівень дерева типу автоморфізму $ax+2t$ складається з двох вершин. Отже автоморфізми  $f(x)=(4k+3)x + b_1$ та $g(x)=(4k+3)x + b_2$ не спряжені в $AutT_2$, а отже і в $FAutT_2$, якщо $ b_1 \not\equiv b_2 (\mod 2)$.
+
+
+$\Rightarrow$ За теоремами  \ref{power_two_lin_conj}  та \ref{4kp3PowerTwoConj}.
+\end{proof}
+
+ \begin{theorem}
+Автоморфізми $f(x)= x + 2^n$ та $f(x)= x + 2^m$ спряжені в $AutT_2$ тоді, і лише тоді, коли $m=n$. 
+\end{theorem}
+\begin{proof}
+
+\end{proof}
+
+ \begin{theorem}
+ Автоморфізми $f(x)= (2^s(2k+1)+1)x + 2^n, n<s$ та $f(x)= (2^s(2k+1)+1)x + 2^m, m<s$ спряжені в $AutT_2$ тоді, і лише тоді, коли $m = n$. 
+\end{theorem}
+\begin{proof}
+
+\end{proof}
+
+
+
+\begin{definition}
+Означимо функцію $\phi_a(x)$ наступним чином:
+            \begin{equation*}
+            \phi_a(b) =
+            \begin{cases}
+                -n-1, \; a = 1,\; b = 2^n(2t+1) ; \\  
+                \; 2^s,\;  a = 2^s(2k+1)+1, s>0, \; b = 0 \\    
+                \; (2^n \mod 2^s)+2^s,\; a = 2^s(2k+1)+1, s>0\; b = 2^n(2t+1) ; 
+            \end{cases}
+            \end{equation*}
+          \end{definition}
+
+          \begin{theorem}\label{final_lin_conj}
+Два лінійних автоморфізми $f(x) = ax+b$ та $g(x) = cx+d$ спряжені тоді, і лише тоді, коли  $\phi_a(b) = \phi_c(d)$.
+\end{theorem}
+
 \begin{definition}\label{part_lin_def1}
 Назвемо автоморфізм кусково-лінійним, якщо існує $n\in \mathbb{N}$, для якого всі стани n-го рівня цього автоморфізму є лінійними.
 \end{definition}
