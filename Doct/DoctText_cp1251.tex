@@ -27,6 +27,8 @@
 \newtheorem{hyp}{Гіпотеза}[subsection]
 \renewcommand{\baselinestretch}{1.5}
 
+\graphicspath{{../Pictures/}}
+
 \begin{document}
 
 \begin{titlepage}
@@ -831,8 +833,8 @@ $$0*C_{FAutT_2}(x)\subseteq \{0*a^{(p*\chi_{a}^{-1})}|p\in Z_2 \cap \mathbb{Q}\}
 Означимо {\bf розмічене дерево типу } $D_f$ для автоморфізму $f \in AutZ_2$ наступним чином. 
 \begin{itemize}
 \item Корінь дерева помітимо автоморфізмом $f$.
-\item Якщо вершина n-го рівня розміченого дерева типу помічена автоморфізмом $a = (b,c)\circ\sigma$, то з n+1-им рівнем цю вершину з'єднує тільки одне ребро. Іншу вершину цього ребра помітимо автоморфізмом $\pi_L(a)\circ \pi_R(a)$
-\item Якщо вершина n-го рівня розміченого дерева типу помічена автоморфізмом $a = (b,c)$, то з n+1-им рівнем цю вершину з'єднує два ребра. Іншу вершину одного ребра помітимо автоморфізмом $\pi_L(a)$, другого ребра -  $\pi_R(a)$.
+\item Якщо вершина n-го рівня розміченого дерева типу помічена автоморфізмом $a = (b,c)\circ\sigma$, то з n+1-им рівнем цю вершину з'єднує тільки одне ребро. Іншу вершину цього ребра помітимо автоморфізмом $b\circ c$
+\item Якщо вершина n-го рівня розміченого дерева типу помічена автоморфізмом $a = (b,c)$, то з n+1-им рівнем цю вершину з'єднує два ребра. Іншу вершину одного ребра помітимо автоморфізмом $b$, другого ребра -  $c$.
 \end{itemize}
 Автоморфізм, що помічає вершину $t\in D_f$ дерева типу позначимо як $D_f(t)$.
 Множину вершин n-го рівня дерева $D$ позначимо як $L_n(D)$.
@@ -841,6 +843,18 @@ $$0*C_{FAutT_2}(x)\subseteq \{0*a^{(p*\chi_{a}^{-1})}|p\in Z_2 \cap \mathbb{Q}\}
 \begin{remark}\label{child_type_subtree}
 За побудовою, піддерево розміченного дерева типу співпадає з розміченним деревом типу автоморфізму, що помічає корінь цього піддерева.
 \end{remark}
+
+\begin{example}
+Побудуємо розмічене дерево типу для автоморфізму $f(x)= 3x+2$ ( рис. \ref{marked_type_tree_3xp2})
+\begin{figure}[h!]
+\center{\includegraphics[width=.5\linewidth]{marked_type_tree_3xp2.eps}}
+\caption{Розмічене дерево типу автоморфізму $f(x)= 3x+2$.}
+\label{marked_type_tree_3xp2}
+\end{figure}
+
+
+\end{example}
+
 \begin{lemma}\label{unique_solution_upper_vertex}
 Нехай $$a = (a_1,a_2)\circ\sigma, b = (b_1,b_2)\circ\sigma$$ $$a' = a_1\circ a_2 ,b' = b_1\circ b_2 $$ та $a'$ і $b'$ спряжені в $FAutT_2$.
 
@@ -849,18 +863,19 @@ $$0*C_{FAutT_2}(x)\subseteq \{0*a^{(p*\chi_{a}^{-1})}|p\in Z_2 \cap \mathbb{Q}\}
 \begin{proof}
 За умовою леми існує $x\in FAutT2$, такий, що $(a')^x = b' $.
 
- Покажемо, що $\hat{x} = (x, a_2\circ x \circ c_2^{-1})$ є скінченно-становим розв'язком рівняння спряженності
+ Покажемо, що $\hat{x} = (x, a_2\circ x \circ b_2^{-1})$ є скінченно-становим розв'язком рівняння спряженності
 $$a^\chi = b$$
+
  Далі
-$$(a_1\circ a_2)^x = c_1\circ c_2$$
+$$(a_1\circ a_2)^x = b_1\circ b_2$$
  і тому % , скориставшись наступними співвідношеннями
 % $$(z_1\circ z_2)^{z_1} = z_2\circ z_1 $$
 % $$(z_1\circ z_2)^{z_2^{-1}} = z_2\circ z_1 $$
-% $$(a_2\circ a_1)^{a_2\circ x\circ c_1} = c_2\circ c_1$$
-$$a^{\hat{x}} = (x^{-1}, c_2\circ x^{-1} \circ a_2^{-1}) \circ (a_1,a_2)\circ \sigma \circ (x, a_2\circ x \circ c_2^{-1}) =$$
-$$= (x^{-1}\circ a_1 \circ (a_2\circ x \circ c_2^{-1}),(c_2\circ x^{-1} \circ a_2^{-1})\circ a_2 \circ x )\circ \sigma= $$
-$$= ((x^{-1}\circ (a_1 \circ a_2)\circ x) \circ c_2^{-1},c_2)\circ \sigma= ((c_1,c_2) \circ c_2^{-1},c_2)\circ \sigma =$$ $$ =(c_1,c_2)\circ \sigma = c $$
-Оскільки автоморфізми $x, a_2, c_2$ - скінченно-станові, то і $a_2\circ x \circ c_2^{-1}$ є скінченно-становим. Отже $\hat{x}\in FAutT_2$, щ.т.д.
+% $$(a_2\circ a_1)^{a_2\circ x\circ b_1} = b_2\circ b_1$$
+$$a^{\hat{x}} = (x^{-1}, b_2\circ x^{-1} \circ a_2^{-1}) \circ (a_1,a_2)\circ \sigma \circ (x, a_2\circ x \circ b_2^{-1}) =$$
+$$= (x^{-1}\circ a_1 \circ (a_2\circ x \circ b_2^{-1}),(b_2\circ x^{-1} \circ a_2^{-1})\circ a_2 \circ x )\circ \sigma= $$
+$$= ((x^{-1}\circ (a_1 \circ a_2)\circ x) \circ b_2^{-1},b_2)\circ \sigma= ((b_1,b_2) \circ b_2^{-1},b_2)\circ \sigma =$$ $$ =(b_1,b_2)\circ \sigma = c $$
+Оскільки автоморфізми $x, a_2, b_2$ - скінченно-станові, то і $a_2\circ x \circ b_2^{-1}$ є скінченно-становим. Отже $\hat{x}\in FAutT_2$, щ.т.д.
 \end{proof}
 \begin{theorem}\label{marked_trees_conj}
 Автоморфізми $a$ та $b$ спряжені в $FAutT_2$ тоді, і лише тоді, коли існує ізоморфізм $\alpha$ їх розмічених дерев типу($D_a*\alpha = D_b$), для якого автоморфізми в відповідних вершинах попарно спряжені в $FAutT_2$
@@ -868,28 +883,33 @@ $$\forall t\in L_n(D_a), \exists x\in FAutT_2,\ D_a(t)^x= D_b(t*\alpha) $$
 \end{theorem}
 \begin{proof}
  $\Rightarrow$
+
 Дійсно, нехай $a = (a_1,a_2), b = (b_1,b_2), a^x = b$
 Тоді, або $x = (x_1, x_2)$ і маємо
-$$a^x = (x_1^{-1},x_2^{-1})\circ (a_1,a_2)\circ (x_1, x_2) = (a_1^{x_1}, a_2^{x_2} ) = (c_1, c_2) $$ і, отже 
-$$c_1 = a_1^{x_1} \quad c_2 = a_2^{x_2} $$
+$$a^x = (x_1^{-1},x_2^{-1})\circ (a_1,a_2)\circ (x_1, x_2) = (a_1^{x_1}, a_2^{x_2} ) = (b_1, b_2) $$ і, отже 
+$$b_1 = a_1^{x_1} \quad b_2 = a_2^{x_2} $$
+і при ізоморфізмі розмічених дерев типу $D_a$ та $D_b$  вершина, що помічена $a_1$ переходить в вершину, що помічена $b_1$, а вершина , що помічена $a_2$ переходить в вершину, що помічена $b_2$.
+
  або $x = (x_1, x_2)\circ \sigma$ і маємо
-$$a^x = \sigma \circ (x_1^{-1},x_2^{-1})\circ (a_1,a_2)\circ (x_1, x_2) \circ \sigma = \sigma \circ (a_1^{x_1}, a_2^{x_2} )\circ \sigma  = (a_2^{x_2}, a_1^{x_1} )\circ \sigma\circ \sigma = (a_2^{x_2}, a_1^{x_1} )= (c_1, c_2) $$ і, отже 
-$$c_1 = a_2^{x_2}  \quad c_2 = a_1^{x_1} $$
+$$a^x = \sigma \circ (x_1^{-1},x_2^{-1})\circ (a_1,a_2)\circ (x_1, x_2) \circ \sigma = \sigma \circ (a_1^{x_1}, a_2^{x_2} )\circ \sigma  = (a_2^{x_2}, a_1^{x_1} )\circ \sigma\circ \sigma = (a_2^{x_2}, a_1^{x_1} )= (b_1, b_2) $$ і, отже 
+$$b_1 = a_2^{x_2}  \quad b_2 = a_1^{x_1} $$
+
+і при ізоморфізмі розмічених дерев типу $D_a$ та $D_b$  вершина, що помічена $a_1$ переходить в вершину, що помічена $b_2$, а вершина , що помічена $a_2$ переходить в вершину, що помічена $b_1$.
 
 Далі, нехай $a = (a_1,a_2)\circ \sigma, b = (b_1,b_2)\circ \sigma, a^x = b$
 Тоді, або $x = (x_1, x_2)$ і маємо
-$$a^x = (x_1^{-1},x_2^{-1})\circ (a_1,a_2)\circ \sigma \circ (x_1, x_2) = (x_1^{-1}\circ a_1\circ x_2,x_2^{-1}\circ a_2 \circ x_1 )\circ \sigma = (c_1, c_2)\circ \sigma$$ і, отже 
-$$c_1 =x_1^{-1}\circ a_1\circ x_2 $$
-$$c_2 = x_2^{-1}\circ a_2 \circ x_1 $$
-$$c_1\circ c_2 = (a_1\circ a_2)^{x_1} $$
-$$c_2\circ c_1 = (a_2\circ a_1)^{x_2} $$
+$$a^x = (x_1^{-1},x_2^{-1})\circ (a_1,a_2)\circ \sigma \circ (x_1, x_2) = (x_1^{-1}\circ a_1\circ x_2,x_2^{-1}\circ a_2 \circ x_1 )\circ \sigma = (b_1, b_2)\circ \sigma$$ і, отже 
+$$b_1 =x_1^{-1}\circ a_1\circ x_2 $$
+$$b_2 = x_2^{-1}\circ a_2 \circ x_1 $$
+$$b_1\circ b_2 = (a_1\circ a_2)^{x_1} $$
+$$b_2\circ b_1 = (a_2\circ a_1)^{x_2} $$
 
  або $x = (x_1, x_2)\circ \sigma$ і маємо
-$$a^x = \sigma \circ (x_1^{-1},x_2^{-1})\circ (a_1,a_2)\circ \sigma \circ (x_1, x_2) \circ \sigma =$$ $$=\sigma \circ  (x_1^{-1}\circ a_1\circ x_2,x_2^{-1}\circ a_2 \circ x_1 )\circ \sigma \circ \sigma =$$ $$= \sigma \circ  (x_1^{-1}\circ a_1\circ x_2,x_2^{-1}\circ a_2 \circ x_1 ) =  $$ $$= (x_2^{-1}\circ a_2 \circ x_1, x_1^{-1}\circ a_1\circ x_2 ) \circ \sigma = (c_1, c_2)\circ \sigma$$ і, отже 
-$$c_1 =x_2^{-1}\circ a_2 \circ x_1 $$
-$$c_2 = x_1^{-1}\circ a_1\circ x_2 $$
-$$c_1\circ c_2 =(a_2\circ a_1)^{x_2} $$
-$$c_2\circ c_1 =  (a_1\circ a_2)^{x_1} $$
+$$a^x = \sigma \circ (x_1^{-1},x_2^{-1})\circ (a_1,a_2)\circ \sigma \circ (x_1, x_2) \circ \sigma =$$ $$=\sigma \circ  (x_1^{-1}\circ a_1\circ x_2,x_2^{-1}\circ a_2 \circ x_1 )\circ \sigma \circ \sigma =$$ $$= \sigma \circ  (x_1^{-1}\circ a_1\circ x_2,x_2^{-1}\circ a_2 \circ x_1 ) =  $$ $$= (x_2^{-1}\circ a_2 \circ x_1, x_1^{-1}\circ a_1\circ x_2 ) \circ \sigma = (b_1, b_2)\circ \sigma$$ і, отже 
+$$b_1 =x_2^{-1}\circ a_2 \circ x_1 $$
+$$b_2 = x_1^{-1}\circ a_1\circ x_2 $$
+$$b_1\circ b_2 =(a_2\circ a_1)^{x_2} $$
+$$b_2\circ b_1 =  (a_1\circ a_2)^{x_1} $$
 
 Згідно з вищезазначеним, відповідні автоморфізми дерева типу спряжені станами автоморфізму $x$.
 
@@ -927,6 +947,7 @@ $$x*\pi_L(f)\circ \pi_R(f) = (4k+1)((4k+1)x+t)+(t+1)+2k =$$
 $$k' = 4k^2 + 2k , t' = (2k+1)t + k$$
 Отже кожний наступний рівень дерева для цього автоморфізму буде складатись з однієї вершини.
 \end{proof}
+% приклад - малюнок з деревами типу для 5x+1, 5x+2, 3x+1
 
 \begin{lemma}\label{power_2_conj}
 Автоморфізми $f(x)=ax+2^n$ та $g(x)=ax+2^n(2b'+1)$ спряжені в $FAutT_2$.
