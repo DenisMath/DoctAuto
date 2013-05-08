@@ -1,0 +1,107 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb, amsfonts, amsthm,amscd}
+\usepackage[T2A]{fontenc}
+\usepackage[cp1251]{inputenc}
+\usepackage[russian,ukrainian,english]{babel}
+\usepackage{graphicx}
+
+\pagestyle{empty}
+
+\textheight=235mm \textwidth=155mm \voffset=-8mm \hoffset=-14mm
+\sloppy
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem*{proposition*}{Proposition}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{corollary*}{Corollary}
+
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+\newtheorem*{definition*}{Definition}
+\newtheorem*{remark*}{Remark}
+\newtheorem*{example*}{Example}
+
+\newcommand{\address}[2]
+{\vspace{-3mm}\medskip
+\begin{minipage}[t]{10.5cm}
+\small{#1 \tt{#2}}
+\end{minipage}}
+
+\renewcommand\refname{\large \textbf{References}}
+
+\begin{document}
+
+
+\begin{center}
+{\bf\large On definitions and basic properties of projective
+modules}
+
+\vskip 0.3cm \centerline{\normalsize R.~Hendersen, P.M.~Jefferson}
+\vskip 0.3cm
+
+{\it Ohio State University}
+
+e-mail:qwertyuiop2013@gmail.com
+
+\end{center}
+
+This paper is an example of abstracts. Definitions, theorems,
+lemmas, statements, corollaries, remarks, examples - all this
+constructions can be implemented and used in your abstracts. The
+following couple of theorems are the examples of mentioned
+constructions.
+
+\begin{theorem}\label{th.1}\cite{item1,item2,item3}
+Let $R$ be any commutative ring with identity. Then following
+statements about $R$-module $P$ are equivalent:
+
+1) $P$ is projective module.
+
+2) There are such free $R$-module $F$ and its submodule $Q$ that
+$F=P\oplus Q$.
+
+3) Every short exact sequence of modules of the form
+$0\longrightarrow A\longrightarrow B\longrightarrow P
+\longrightarrow 0$ is a split exact sequence.
+\end{theorem}
+
+\begin{corollary}\label{cor.1}
+Every free module is projective.
+\end{corollary}
+
+\begin{example}\label{ex.1}
+Over a direct product of rings $R\times S$ where $R$ and $S$ are
+nonzero rings, both $R \times 0$ and $0 \times S$ are non-free
+projective modules.
+\end{example}
+
+\begin{lemma}\label{lm.1}\cite{item1}
+Every direct summand of projective $R$-module $P$ is also
+projective.
+\end{lemma}
+
+For arbitrary ring $R$ submodules of right regular module $R_R$ are
+its right ideals. Since $R_R$ is free as module, then it is
+projective, by corollary~\ref{cor.1}. As a consequence we have:
+
+\begin{corollary}\label{cor.2}
+If a right ideal $I$ of ring $R$ is a direct summand of $R$ then its
+is projective as right $R$-module.
+\end{corollary}
+
+Further investigations can be presented in the same manner.
+
+\vspace{-5mm}\small
+\begin{thebibliography}{10}
+\bibitem{item1} Nicolas Bourbaki, Commutative algebra, Ch. II, §5.
+\bibitem{item2} Paul M. Cohn (2003). Further algebra and applications. Springer. ISBN 1-85233-667-6.
+\bibitem{item3} Serge Lang (1993). Algebra (3rd ed.). Addison–Wesley. ISBN 0-201-55540-9.
+\end{thebibliography}
+
+
+\end{document}

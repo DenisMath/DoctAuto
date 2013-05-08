@@ -1,0 +1,99 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb, amsfonts, amsthm,amscd}
+\usepackage[T2A]{fontenc}
+\usepackage[cp1251]{inputenc}
+\usepackage[russian,ukrainian,english]{babel}
+\usepackage{graphicx}
+
+\pagestyle{empty}
+
+\textheight=235mm \textwidth=155mm \voffset=-8mm \hoffset=-14mm
+\sloppy
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem*{proposition*}{Proposition}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{corollary*}{Corollary}
+
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+\newtheorem*{definition*}{Definition}
+\newtheorem*{remark*}{Remark}
+\newtheorem*{example*}{Example}
+
+\newcommand{\address}[2]
+{\vspace{-3mm}\medskip
+\begin{minipage}[t]{10.5cm}
+\small{#1 \tt{#2}}
+\end{minipage}}
+
+\renewcommand\refname{\large \textbf{References}}
+
+\begin{document}
+
+
+\begin{center}
+{\bf\large Recursive criterion of conjugation of finite-state binary tree's automorphisms}
+
+\vskip 0.3cm \centerline{\normalsize D.~Morozov}
+\vskip 0.3cm
+
+{\it National University of ``Kyiv-Mohyla Academy''}
+
+e-mail: denis.morozov178@gmail.com
+
+\end{center}
+ In this paper conjugation problem in the group of finite-state automorphisms of rooted binary tree investigated.
+
+\begin{definition}
+Define $FAutT_2$ as group of finite-state automorphisms of rooted binary tree.
+\end{definition}
+
+\begin{definition}\label{marked_type_tree_def}
+Denote {\bf the marked tree } for automorphism $f \in AutZ_2$  like this.
+
+\begin{itemize}
+\item The root of the tree  note by automorphism $f$.
+\item If the vertex of the n-th level of the marked-type tree marked automorphism $a = (b,c)\circ\sigma$, then 
+ only one edge  connects the n+1- th level with this vertex. Other vertex of this edge marked with automorphism $\pi_L(a)\circ \pi_R(a)$.
+\item If the vertex of the n-th level of the marked-type tree marked automorphism $a = (b,c)$, then 
+ two edges  connect the n+1- th level with this vertex. Other vertex of one edge marked with automorphism $\pi_L(a)$ and another edge marked with $\pi_R(a)$.
+
+\end{itemize}
+Automorphism that marked the vertex $ t \ in D_f $ of  marked-type tree denote as $ D_f (t) $.
+The set of vertices of n-th level of tree $D$ denote as $L_n(D)$.
+\end{definition}
+
+\begin{lemma}\label{unique_solution_upper_vertex}
+Let $$a = (a_1,a_2)\circ\sigma, b = (b_1,b_2)\circ\sigma$$ $$a' = a_1\circ a_2 ,b' = b_1\circ b_2 $$ 
+If  $a'$ and $b'$ conjugated in $FAutT_2$
+then $a$ and $b$ conjugated in $FAutT_2$.
+\end{lemma}
+
+\begin{theorem}\label{marked_trees_conj}
+Automorphisms $a$ and $b$ conjugated in $FAutT_2$ if, and only if
+$$\forall t\in L_n(D_a), \exists x\in FAutT_2,\ D_a(t)^x= D_b(t*\alpha) $$
+\end{theorem}
+
+\begin{corollary}\label{marked_trees_conj_level}
+Automorphisms $a$ and $b$ conjugated in $FAutT_2$ if, and only if
+$$\exists n\in\mathbb{N}, \forall t\in L_n(D_a), \exists x\in FAutT_2\ D_a(t)^x= D_b(t*\alpha) $$
+\end{corollary}
+
+
+This techniques applied for finite-state conjugation problem solving of differentiable  finite-state izometries of the ring of integer 2-adic numbers.
+
+\vspace{-5mm}\small
+\begin{thebibliography}{10}
+\bibitem{D46} Denis Morozov. {Differentiable finite-state izometries and izometric
+polynomials of the ring of integer 2-adic numbers}. 8th International Algebraic Conference, 
+July 5-12 (2011), Lugansk, Ukraine.
+\end{thebibliography}
+
+
+\end{document}
