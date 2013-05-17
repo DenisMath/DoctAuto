@@ -22,17 +22,17 @@
 
 \begin{document}
 
-\title[] {Спряженність кусково-лінійних шарово-транзитивних
-  автоморфізмів}
+\title[] {Спряженість кусково-лінійних сферично-транзитивних
+  автоморфізмів кореневого бінарного дерева.}
 
-\author[]{Денис Морозов}
+\author[]{к.ф.-м.н.  Морозов Денис Иванович}
 
 % \centerline{(Address)}
 
 \begin{abstract}
 
-  Дана стаття дає відповідь на питання скінчено-станової спряженості
-  лінійних шарово-транзитивних автоморфізмів бінарного дерева.
+  Дана стаття дає відповідь на питання скінченно-станової спряженості
+  лінійних сферично-транзитивних автоморфізмів бінарного дерева.
 
 \end{abstract}
 
@@ -52,31 +52,163 @@
 
 \section{}
 
-\begin{theorem}
-  Theorem
-\end{theorem}
-
-\begin{proof}
-  Proof
-
-  In \cite{M_68}.
-\end{proof}
-
-\begin{lemma}
-  Lemma
-\end{lemma}
-
-\begin{corollary}
-  Corollary
-\end{corollary}
 
 \begin{definition}
-  Definition
+  Назвемо автоморфізм кореневого бінарного дерева
+  сферично-транзитивним, якщо його дерево типу є ланцюгом.
+
+  Множину сферично-транзитивних автоморфізмів позначимо як $STAutZ_2$
+  \end{definition}
+
+\begin{definition}
+    Означимо функцію $\varphi :STAutZ_2\rightarrow STAutZ_2$ наступним
+    чином $\varphi (x)=x_1\circ x_2$, де $x_1,x_2$ визначаються
+    співвідношеням $x=(x_1,x_2)\circ\sigma $
+  \end{definition}
+
+  Функція визначена корректно, оскільки, якщо $x=(x_1,x_2)\circ\sigma
+  $ є сферично-транзитивним автоморфізмом кільця $Z_2$, то і $x_1\circ
+  x_2$ є сферично-транзитивним автоморфізмом кільця $Z_2$.
+
+  \begin{definition}
+    Означимо функцію $\pi_L:AutZ_2\rightarrow AutZ_2$ наступним чином
+    $\pi_L (x)=x_1$, де $x_1$ визначається співвідношеням
+    $x=(x_1,x_2)$ або $x=(x_1,x_2)\circ\sigma $
+  \end{definition}
+
+  \begin{definition}
+    Означимо функцію $\pi_R:AutZ_2\rightarrow AutZ_2$ наступним чином
+    $\pi_R (x)=x_2$, де $x_2$ визначається співвідношеням
+    $x=(x_1,x_2)$ або $x=(x_1,x_2)\circ\sigma $
+  \end{definition}
+
+  Очевидно, що для сферично-транзитивного автоморфізма $a$ має місце
+  рівність $a=(\pi_L(a),\pi_R(a))\circ\sigma$ і значення
+  $\pi_L(a),\pi_R(a)$ та $\varphi(a)$ зв'язані наступним
+  співвідношенням: $$\varphi(a)=\pi_L(a)\circ \pi_R(a)$$ Крім того,
+  для автоморфізмів $a=(a_1,a_2),\ b=(b_1,b_2)\circ \sigma$ мають
+  місце наступні співвідношення:
+  $$\pi_L(a^{-1})=(\pi_L(a))^{-1},\ \pi_R(a^{-1})=(\pi_R(a))^{-1}$$
+  $$\pi_L(b^{-1})=(\pi_R(b))^{-1},\ \pi_R(b^{-1})=(\pi_L(b))^{-1}$$
+  $$\pi_L(a\circ b) =\pi_L(a)\circ \pi_L(b),\ \pi_R(a\circ b) =\pi_R(a)\circ \pi_R(b)$$
+    $$\pi_L(b\circ a) =\pi_L(b)\circ \pi_R(a),\ \pi_R(b\circ a) =\pi_R(b)\circ \pi_L(a)$$
+
+
+  \begin{theorem}
+    Нехай $a, b$ - сферично-транзитивні скінченно-станові ізометрії
+    кільця $Z_2$, а $\chi_0$ - 0-розв'язок рівняння спряженості
+    $a^{\chi_0}=b$ . Тоді $\forall n \in \mathbb{N}$ має місце
+    рівність $$\varphi^n(a)^{\pi_L^n(\chi_0)}=\varphi^n(b)$$
+  \end{theorem}
+
+  \begin{proof} Дійсно, оскільки $a^{\chi_0}=b$, то
+    $\varphi^n(a^{\chi_0})=\varphi^n(b)\ \forall n \in \mathbb{N}$.
+
+    Далі, $$\pi_L(a^{\chi_0})=\pi_L(\chi_0^{-1}\circ a\circ
+    \chi_0)=\pi_L(\chi_0^{-1})\circ \pi_L(a) \circ
+    \pi_R(\chi_0)=(\pi_L(\chi_0))^{-1}\circ \pi_L(a) \circ
+    \pi_R(\chi_0)$$ $$\pi_R(a^{\chi_0})=\pi_R(\chi_0^{-1}\circ a\circ
+    \chi_0)=\pi_R(\chi_0^{-1})\circ \pi_R(a) \circ
+    \pi_L(\chi_0)=(\pi_R(\chi_0))^{-1}\circ \pi_R(a) \circ
+    \pi_L(\chi_0)$$
+
+    Скористаємось методом математичної індукції:
+
+    1) Для n=0 маємо рівність $a^{\chi_0}=b$ і тверження виконується.
+    2) Нехай для $n=k$ твердження теореми виконується, тобто
+    $\varphi^k(a)^{\pi_L^k(\chi_0)}=\varphi^k(b)$. Покажемо, що воно
+    також має місце для $n=k+1$ .
+
+
+
+    Оскільки $\varphi^{k+1}(b)=\varphi(\varphi^k(b))$, то, згідно з
+    індуктивним
+    припущенням, $$\varphi^{k+1}(b)=\varphi(\varphi^k(a)^{\pi_L^k(\chi_0)})=\pi_L(\varphi^k(a)^{\pi_L^k(\chi_0)})\circ
+    \pi_R(\varphi^k(a)^{\pi_L^k(\chi_0)})$$ і $
+    \varphi(\varphi^k(a)^{\pi_L^k(\chi_0)}) =
+    ((\pi_L(\pi_L^k(\chi_0)))^{-1}\circ \pi_L(\varphi^k(a)) \circ
+    \pi_R(\pi_L^k(\chi_0)))\circ ( (\pi_R(\pi_L^k(\chi_0)))^{-1}\circ
+    \pi_R(\varphi^k(a)) \circ
+    \pi_L(\pi_L^k(\chi_0)))=(\pi_L(\pi_L^k(\chi_0)))^{-1}\circ (
+    \pi_L(\varphi^k(a)) \circ \pi_R(\varphi^k(a))) \circ
+    \pi_L(\chi_0)=(\pi_L(\pi_L^k(\chi_0)))^{-1}\circ
+    \varphi(\varphi^k(a)) \circ
+    \pi_L(\pi_L^k(\chi_0))=\varphi(\varphi^k(a))^{\pi_L(\pi_L^k(\chi_0))}=\varphi^{k+1}(a)^{\pi_L^{k+1}(\chi_0)}$,
+    тому має місце рівність
+    $\varphi^{k+1}(a)^{\pi_L^{k+1}(\chi_0)}=\varphi^{k+1}(b)$ і,
+    згідно з методом математичної індукції, маємо твердження теореми.
+  \end{proof}
+
+   \begin{theorem}
+     Нехай $a, b$ - сферично-транзитивні скінченно-станові ізометрії
+     кільця $Z_2$. Тоді має місце твердження, що $\chi_0$ -
+     0-розв'язок рівняння спряженості $a^{\chi_0}=b$ є
+     скінченностановим тоді і тільки тоді, коли $\pi_L^n(\chi_0)$ є
+     скінченностановим для деякого $n \in \mathbb{N}$.
+   \end{theorem}
+
+ \begin{definition}
+   Назвемо скінченно-станову ізометрію $f$ 0-повною якщо образ 0 при
+   дії на нього централізатором цього елементу співпадає з множиною
+   квазіперіодичних елементів кільця $Z_2$
+$$0*C_{FAutT_2}(f) = Z_2\cap \mathbb{Q}$$
 \end{definition}
+ 
+ 
+\begin{corollary}\label{conj_null_full_izom}
+  Нехай $a, b$ - сферично-транзитивні скінченно-станові 0-повні
+  ізометрії кільця $Z_2$. Тоді $a$ та $b$ спряжені в $FAutT_2$ тоді,
+  і тільки тоді, коли $\varphi^n(a)$ та $\varphi^n(b)$ спряжені в
+  $FAutT_2$ для деякого $n \in \mathbb{N}$.
+\end{corollary}
+В статті \cite{M_1} були доведені наступні теореми:
+\begin{theorem}\label{4k_1_sph_transitive}
+  Автоморфізми $f(x)=(4k+1)x+(2t+1) (k, t\in Z_2)$ є сферично-транзитивними.
+\end{theorem}
+
+\begin{theorem}\label{conj_ax_p}
+Ізометрії $f_1(x)=(4k_1+1)x+1$ та $f_2(x)=(4k_2+1)x+1 \ (k_1,k_2 \in
+Z_2^{\mathbb{Q}})$ спряжені в $FAutT_2 \Leftrightarrow
+4k_1+1=4k_2+1$.
+\end{theorem}
+Скористаємося ними далі.
+
+\begin{lemma}\label{null_linear_transitive}
+  Cкінченно-станова лінійна сферично-транзитивна ізометрія є
+  0-повною.
+\end{lemma}
+
+\begin{lemma}\label{null_full_linear_transitive}
+  Cкінченно-станова кусково-лінійна сферично-транзитивна ізометрія є
+  0-повною.
+\end{lemma}
+
+\begin{theorem}\label{sph_tr_part_lin_conj}
+  Два скінченно-станові лінійні сферично-транзитивні автоморфізми
+  спряжені в $FAutT_2$ тоді, і лише тоді, коли знайдеться рівень, для
+  якого всі автоморфізми цього рівня є лінійними, та добутки всіх
+  коефіцієнтів біля х рівні для обох автоморфізмів.
+\end{theorem}
+\begin{proof}
+  За теоремою \ref{conj_ax_p} автоморфізми $ax+b$ та
+  $cx+d$ спряжені в $FAutT_2$ тоді, і лише тоді, коли $a=c$. Отже, за
+  наслідком \ref{conj_null_full_izom} та лемою
+  \ref{null_full_linear_transitive} маємо твердження теореми.
+\end{proof}
+
+
+  Кусочно-лінійні сферично-транзитивні автоморфізми $$f(x)= (3x +1, 3x
+  )\circ \sigma $$ та $$g(x)= (9x+2 , x+7 )\circ \sigma $$ за теоремою
+  \ref{sph_tr_part_lin_conj} спряжені в $FAutT_2$, оскільки
+$$3\cdot 3 = 9\cdot 1$$
 
 
 \begin{thebibliography}{9}
-\bibitem{M_1}  {\it Морозов  Д.I.}  Спряженiсть  автоморфiзмiв,  що  задаються лiнiйними функцiями в групi скiнченностанових автоморфiзмiв кореневого сферично-однорiдного дерева   . Вiсник Київського   ун-ту. Серiя: фiзико-математичнi науки. - 2008.– вип.№1 –C.40- 43.  
+\bibitem{M_1} {\it Морозов Д.I.}  Спряженiсть автоморфiзмiв, що
+  задаються лiнiйними функцiями в групi скiнченностанових
+  автоморфiзмiв кореневого сферично-однорiдного дерева . Вiсник
+  Київського ун-ту. Серiя: фiзико-математичнi науки. - 2008.– вип.№1
+  –C.40- 43.
 
 \end{thebibliography}
 
