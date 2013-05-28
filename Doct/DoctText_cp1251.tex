@@ -1179,20 +1179,20 @@ $$3\cdot 3 = 9\cdot 1$$
 \begin{proof}
   За умовою леми існує $x\in FAutT2$, такий, що $(a')^x = b' $.
 
-  Покажемо, що $\hat{x} = (x, a_2\circ x \circ c_2^{-1})$ є
+  Покажемо, що $\hat{x} = (x, a_2\circ x \circ b_2^{-1})$ є
   скінченно-становим розв'язком рівняння спряженності
 $$a^\chi = b$$
 Далі
-$$(a_1\circ a_2)^x = c_1\circ c_2$$
+$$(a_1\circ a_2)^x = b_1\circ b_2$$
 і тому % , скориставшись наступними співвідношеннями
 % $$(z_1\circ z_2)^{z_1} = z_2\circ z_1 $$ $$(z_1\circ z_2)^{z_2^{-1}}
-% = z_2\circ z_1 $$ $$(a_2\circ a_1)^{a_2\circ x\circ c_1} = c_2\circ
-% c_1$$
-$$a^{\hat{x}} = (x^{-1}, c_2\circ x^{-1} \circ a_2^{-1}) \circ (a_1,a_2)\circ \sigma \circ (x, a_2\circ x \circ c_2^{-1}) =$$
-$$= (x^{-1}\circ a_1 \circ (a_2\circ x \circ c_2^{-1}),(c_2\circ x^{-1} \circ a_2^{-1})\circ a_2 \circ x )\circ \sigma= $$
-$$= ((x^{-1}\circ (a_1 \circ a_2)\circ x) \circ c_2^{-1},c_2)\circ \sigma= ((c_1,c_2) \circ c_2^{-1},c_2)\circ \sigma =$$ $$ =(c_1,c_2)\circ \sigma = c $$
-Оскільки автоморфізми $x, a_2, c_2$ - скінченно-станові, то і
-$a_2\circ x \circ c_2^{-1}$ є скінченно-становим. Отже $\hat{x}\in
+% = z_2\circ z_1 $$ $$(a_2\circ a_1)^{a_2\circ x\circ b_1} = b_2\circ
+% b_1$$
+$$a^{\hat{x}} = (x^{-1}, b_2\circ x^{-1} \circ a_2^{-1}) \circ (a_1,a_2)\circ \sigma \circ (x, a_2\circ x \circ b_2^{-1}) =$$
+$$= (x^{-1}\circ a_1 \circ (a_2\circ x \circ b_2^{-1}),(b_2\circ x^{-1} \circ a_2^{-1})\circ a_2 \circ x )\circ \sigma= $$
+$$= ((x^{-1}\circ (a_1 \circ a_2)\circ x) \circ b_2^{-1},b_2)\circ \sigma= ((b_1,b_2) \circ b_2^{-1},b_2)\circ \sigma =$$ $$ =(b_1,b_2)\circ \sigma = c $$
+Оскільки автоморфізми $x, a_2, b_2$ - скінченно-станові, то і
+$a_2\circ x \circ b_2^{-1}$ є скінченно-становим. Отже $\hat{x}\in
 FAutT_2$, щ.т.д.
 \end{proof}
 \begin{theorem}\label{marked_trees_conj}
@@ -1205,26 +1205,26 @@ $$\forall t\in L_n(D_a), \exists x\in FAutT_2,\ D_a(t)^x= D_b(t*\alpha) $$
 \begin{proof}
   $\Rightarrow$ Дійсно, нехай $a = (a_1, a_2), b = (b_1, b_2), a^x =
   b$ Тоді, або $x = (x_1, x_2)$ і маємо
-$$a^x = (x_1^{-1},x_2^{-1})\circ (a_1,a_2)\circ (x_1, x_2) = (a_1^{x_1}, a_2^{x_2} ) = (c_1, c_2) $$ і, отже 
-$$c_1 = a_1^{x_1} \quad c_2 = a_2^{x_2} $$
+$$a^x = (x_1^{-1},x_2^{-1})\circ (a_1,a_2)\circ (x_1, x_2) = (a_1^{x_1}, a_2^{x_2} ) = (b_1, b_2) $$ і, отже 
+$$b_1 = a_1^{x_1} \quad b_2 = a_2^{x_2} $$
 або $x = (x_1, x_2)\circ \sigma$ і маємо
-$$a^x = \sigma \circ (x_1^{-1},x_2^{-1})\circ (a_1,a_2)\circ (x_1, x_2) \circ \sigma = \sigma \circ (a_1^{x_1}, a_2^{x_2} )\circ \sigma  = (a_2^{x_2}, a_1^{x_1} )\circ \sigma\circ \sigma = (a_2^{x_2}, a_1^{x_1} )= (c_1, c_2) $$ і, отже 
-$$c_1 = a_2^{x_2}  \quad c_2 = a_1^{x_1} $$
+$$a^x = \sigma \circ (x_1^{-1},x_2^{-1})\circ (a_1,a_2)\circ (x_1, x_2) \circ \sigma = \sigma \circ (a_1^{x_1}, a_2^{x_2} )\circ \sigma  = (a_2^{x_2}, a_1^{x_1} )\circ \sigma\circ \sigma = (a_2^{x_2}, a_1^{x_1} )= (b_1, b_2) $$ і, отже 
+$$b_1 = a_2^{x_2}  \quad b_2 = a_1^{x_1} $$
 
 Далі, нехай $a = (a_1,a_2)\circ \sigma, b = (b_1,b_2)\circ \sigma, a^x
 = b$ Тоді, або $x = (x_1, x_2)$ і маємо
-$$a^x = (x_1^{-1},x_2^{-1})\circ (a_1,a_2)\circ \sigma \circ (x_1, x_2) = (x_1^{-1}\circ a_1\circ x_2,x_2^{-1}\circ a_2 \circ x_1 )\circ \sigma = (c_1, c_2)\circ \sigma$$ і, отже 
-$$c_1 =x_1^{-1}\circ a_1\circ x_2 $$
-$$c_2 = x_2^{-1}\circ a_2 \circ x_1 $$
-$$c_1\circ c_2 = (a_1\circ a_2)^{x_1} $$
-$$c_2\circ c_1 = (a_2\circ a_1)^{x_2} $$
+$$a^x = (x_1^{-1},x_2^{-1})\circ (a_1,a_2)\circ \sigma \circ (x_1, x_2) = (x_1^{-1}\circ a_1\circ x_2,x_2^{-1}\circ a_2 \circ x_1 )\circ \sigma = (b_1, b_2)\circ \sigma$$ і, отже 
+$$b_1 =x_1^{-1}\circ a_1\circ x_2 $$
+$$b_2 = x_2^{-1}\circ a_2 \circ x_1 $$
+$$b_1\circ b_2 = (a_1\circ a_2)^{x_1} $$
+$$b_2\circ b_1 = (a_2\circ a_1)^{x_2} $$
 
 або $x = (x_1, x_2)\circ \sigma$ і маємо
-$$a^x = \sigma \circ (x_1^{-1},x_2^{-1})\circ (a_1,a_2)\circ \sigma \circ (x_1, x_2) \circ \sigma =$$ $$=\sigma \circ  (x_1^{-1}\circ a_1\circ x_2,x_2^{-1}\circ a_2 \circ x_1 )\circ \sigma \circ \sigma =$$ $$= \sigma \circ  (x_1^{-1}\circ a_1\circ x_2,x_2^{-1}\circ a_2 \circ x_1 ) =  $$ $$= (x_2^{-1}\circ a_2 \circ x_1, x_1^{-1}\circ a_1\circ x_2 ) \circ \sigma = (c_1, c_2)\circ \sigma$$ і, отже 
-$$c_1 =x_2^{-1}\circ a_2 \circ x_1 $$
-$$c_2 = x_1^{-1}\circ a_1\circ x_2 $$
-$$c_1\circ c_2 =(a_2\circ a_1)^{x_2} $$
-$$c_2\circ c_1 =  (a_1\circ a_2)^{x_1} $$
+$$a^x = \sigma \circ (x_1^{-1},x_2^{-1})\circ (a_1,a_2)\circ \sigma \circ (x_1, x_2) \circ \sigma =$$ $$=\sigma \circ  (x_1^{-1}\circ a_1\circ x_2,x_2^{-1}\circ a_2 \circ x_1 )\circ \sigma \circ \sigma =$$ $$= \sigma \circ  (x_1^{-1}\circ a_1\circ x_2,x_2^{-1}\circ a_2 \circ x_1 ) =  $$ $$= (x_2^{-1}\circ a_2 \circ x_1, x_1^{-1}\circ a_1\circ x_2 ) \circ \sigma = (b_1, b_2)\circ \sigma$$ і, отже 
+$$b_1 =x_2^{-1}\circ a_2 \circ x_1 $$
+$$b_2 = x_1^{-1}\circ a_1\circ x_2 $$
+$$b_1\circ b_2 =(a_2\circ a_1)^{x_2} $$
+$$b_2\circ b_1 =  (a_1\circ a_2)^{x_1} $$
 
 Згідно з вищезазначеним, відповідні автоморфізми дерева типу спряжені
 станами автоморфізму $x$.
