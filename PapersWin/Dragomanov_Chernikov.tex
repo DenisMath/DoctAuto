@@ -132,10 +132,7 @@ x_2$ є сферично-транзитивним автоморфізмом дерева $T_2$.
     $x=(x_1,x_2)$ або $x=(x_1,x_2)\circ\sigma $
   \end{definition}
 
- \begin{definition}
-  Назвемо 0-розв'язком рівняння спряженності $ a^{\chi}=b$ автоморфізм $\chi_0$ такий, що
-$$0*\chi_0 = 0,\quad a^{\chi_0}=b$$
-\end{definition}
+ 
 
 Очевидно, що для сферично-транзитивного автоморфізма $a$ має місце
   рівність $a=(\pi_L(a),\pi_R(a))\circ\sigma$ і значення
@@ -148,9 +145,71 @@ $$0*\chi_0 = 0,\quad a^{\chi_0}=b$$
   $$\pi_L(a\circ b) =\pi_L(a)\circ \pi_L(b),\ \pi_R(a\circ b) =\pi_R(a)\circ \pi_R(b)$$
     $$\pi_L(b\circ a) =\pi_L(b)\circ \pi_R(a),\ \pi_R(b\circ a) =\pi_R(b)\circ \pi_L(a)$$
 
+\begin{lemma}\label{unique_solution_upper_vertex}
+ 
+ Скінченно-станові сферично-транзитивні автоморфізми $a$ і $b$  спряжені в $FAutT_2$  тоді, і лише тоді, коли
+$\varphi(a)$ і $\varphi(b)$  спряжені в $FAutT_2$.
+
+\end{lemma}
+\begin{proof}
+ Нехай $a = (a_1,a_2)\circ\sigma, b = (b_1,b_2)\circ\sigma$.
+
+$\Rightarrow$
+
+ Припустимо, що існує автоморфізм $x\in FAutT_2$, такий, що $a^x = b $.
+
+Якщо $x = (x_1, x_2)$, то має місце наступне співвідношення:
+$$a^x = (x_1^{-1},x_2^{-1})\circ (a_1,a_2)\circ\sigma \circ (x_1,x_2) =$$
+$$= (x_1^{-1}\circ a_1 \circ x_2,x_2^{-1}\circ a_1 \circ x_1 )\circ\sigma  = (b_1,b_2)\circ\sigma  $$
+Отже $b_1 = x_1^{-1}\circ a_1 \circ x_2 $ і $b_2 = x_2^{-1}\circ a_2 \circ x_1 $, тому 
+$$\varphi(b) = b_1 \circ b_2 = (x_1^{-1}\circ a_1 \circ x_2)\circ (x_2^{-1}\circ a_2 \circ x_1  ) = x_1^{-1}\circ a_1 \circ a_2 \circ x_1 = \varphi(a)^{x_1} $$
+і $\varphi(a)$ спряженний з  $\varphi(b)$ скінченно-становим автоморфізмом $x_1$.
+
+Якщо $x = (x_1, x_2)\circ \sigma$, то має місце наступне співвідношення:
+$$a^x = \sigma \circ (x_1^{-1},x_2^{-1})\circ (a_1,a_2)\circ\sigma \circ (x_1,x_2) \circ  =$$
+$$= (x_2^{-1}\circ a_2 \circ x_1,x_1^{-1}\circ a_2 \circ x_2 )\circ\sigma  = (b_1,b_2)\circ\sigma  $$
+
+Отже $b_1 = x_2^{-1}\circ a_2 \circ x_1 $ і $b_2 = x_1^{-1}\circ a_1 \circ x_2 $, тому 
+$$\varphi(b) = b_1 \circ b_2 = (x_2^{-1}\circ a_2 \circ x_1)\circ (x_1^{-1}\circ a_1 \circ x_2  ) =$$ $$= x_2^{-1}\circ a_2 \circ a_1 \circ x_2 = x_2^{-1} \circ a_1^{-1} \circ (a_1\circ a_2) \circ a_1 \circ x_2= \varphi(a)^{a_1\circ x_1} $$
+і $\varphi(a)$ спряженний з  $\varphi(b)$ скінченно-становим автоморфізмом $a_1\circ x_2$.
+
+
+$\Leftarrow$
+
+ Припустимо, що існує автоморфізм $x\in FAutT_2$, такий, що $\varphi(a)^x = \varphi(b) $.
+
+  Покажемо, що $\hat{x} = (x, a_2\circ x \circ b_2^{-1})$ є
+  скінченно-становим розв'язком рівняння спряженності $a^\chi = b$.
+Далі
+$$(a_1\circ a_2)^x = b_1\circ b_2$$
+і тому % , скориставшись наступними співвідношеннями
+% $$(z_1\circ z_2)^{z_1} = z_2\circ z_1 $$ $$(z_1\circ z_2)^{z_2^{-1}}
+% = z_2\circ z_1 $$ $$(a_2\circ a_1)^{a_2\circ x\circ b_1} = b_2\circ
+% b_1$$
+$$a^{\hat{x}} = (x^{-1}, b_2\circ x^{-1} \circ a_2^{-1}) \circ (a_1,a_2)\circ \sigma \circ (x, a_2\circ x \circ b_2^{-1}) =$$
+$$= (x^{-1}\circ a_1 \circ (a_2\circ x \circ b_2^{-1}),(b_2\circ x^{-1} \circ a_2^{-1})\circ a_2 \circ x )\circ \sigma= $$
+$$= ((x^{-1}\circ (a_1 \circ a_2)\circ x) \circ b_2^{-1},b_2)\circ \sigma= ((b_1,b_2) \circ b_2^{-1},b_2)\circ \sigma =$$ $$ =(b_1,b_2)\circ \sigma = b $$
+Оскільки автоморфізми $x, a_2, b_2$ - скінченно-станові, то і
+$a_2\circ x \circ b_2^{-1}$ є скінченно-становим. Отже $\hat{x}\in
+FAutT_2$, щ.т.д.
+\end{proof}
+
+Застосувавши лему \ref{unique_solution_upper_vertex} n разів отримаємо рекурсивний критерій спряженності сферично-транзитивних скінченно-станових
+  ізометрій дерева $T_2$:
+\begin{theorem}\label{conj_null_full_izom}
+  Нехай $a, b$ - сферично-транзитивні скінченно-станові
+  ізометрії дерева $T_2$. Ізометрії $a$ та $b$ спряжені в $FAutT_2$ тоді, і
+  тільки тоді, коли $\varphi^n(a)$ та $\varphi^n(b)$ спряжені в
+  $FAutT_2$ для деякого $n \in \mathbb{N}$.
+\end{theorem}
+
+\begin{definition}
+  Назвемо 0-розв'язком рівняння спряженності $ a^{\chi}=b$ автоморфізм $\chi_0$ такий, що
+$$0*\chi_0 = 0,\quad a^{\chi_0}=b$$
+\end{definition}
 
   \begin{theorem}\label{null_conj_root}
-    Нехай $a, b$ - сферично-транзитивні скінченно-станові ізометрії
+    Нехай $a, b$ - сферично-транзитивні  ізометрії
     дерева $T_2$, а $\chi_0$ - 0-розв'язок рівняння спряженості
     $a^{\chi_0}=b$ . Тоді $\forall n \in \mathbb{N}$ має місце
     рівність $$\varphi^n(a)^{\pi_L^n(\chi_0)}=\varphi^n(b)$$
@@ -257,63 +316,7 @@ $$0*(\chi\circ c^{-1}) = 0$$
 
 \end{proof}
 
-\begin{lemma}\label{unique_solution_upper_vertex}
- 
- Скінченно-станові сферично-транзитивні автоморфізми $a$ і $b$  спряжені в $FAutT_2$  тоді, і лише тоді, коли
-$\varphi(a)$ і $\varphi(b)$  спряжені в $FAutT_2$.
 
-\end{lemma}
-\begin{proof}
- Нехай $a = (a_1,a_2)\circ\sigma, b = (b_1,b_2)\circ\sigma$.
-
-$\Rightarrow$
-
- Припустимо, що існує автоморфізм $x\in FAutT_2$, такий, що $a^x = b $.
-
-Якщо $x = (x_1, x_2)$, то має місце наступне співвідношення:
-$$a^x = (x_1^{-1},x_2^{-1})\circ (a_1,a_2)\circ\sigma \circ (x_1,x_2) =$$
-$$= (x_1^{-1}\circ a_1 \circ x_2,x_2^{-1}\circ a_1 \circ x_1 )\circ\sigma  = (b_1,b_2)\circ\sigma  $$
-Отже $b_1 = x_1^{-1}\circ a_1 \circ x_2 $ і $b_2 = x_2^{-1}\circ a_2 \circ x_1 $, тому 
-$$\varphi(b) = b_1 \circ b_2 = (x_1^{-1}\circ a_1 \circ x_2)\circ (x_2^{-1}\circ a_2 \circ x_1  ) = x_1^{-1}\circ a_1 \circ a_2 \circ x_1 = \varphi(a)^{x_1} $$
-і $\varphi(a)$ спряженний з  $\varphi(b)$ скінченно-становим автоморфізмом $x_1$.
-
-Якщо $x = (x_1, x_2)\circ \sigma$, то має місце наступне співвідношення:
-$$a^x = \sigma \circ (x_1^{-1},x_2^{-1})\circ (a_1,a_2)\circ\sigma \circ (x_1,x_2) \circ  =$$
-$$= (x_2^{-1}\circ a_2 \circ x_1,x_1^{-1}\circ a_2 \circ x_2 )\circ\sigma  = (b_1,b_2)\circ\sigma  $$
-
-Отже $b_1 = x_2^{-1}\circ a_2 \circ x_1 $ і $b_2 = x_1^{-1}\circ a_1 \circ x_2 $, тому 
-$$\varphi(b) = b_1 \circ b_2 = (x_2^{-1}\circ a_2 \circ x_1)\circ (x_1^{-1}\circ a_1 \circ x_2  ) =$$ $$= x_2^{-1}\circ a_2 \circ a_1 \circ x_2 = x_2^{-1} \circ a_1^{-1} \circ (a_1\circ a_2) \circ a_1 \circ x_2= \varphi(a)^{a_1\circ x_1} $$
-і $\varphi(a)$ спряженний з  $\varphi(b)$ скінченно-становим автоморфізмом $a_1\circ x_2$.
-
-
-$\Leftarrow$
-
- Припустимо, що існує автоморфізм $x\in FAutT_2$, такий, що $\varphi(a)^x = \varphi(b) $.
-
-  Покажемо, що $\hat{x} = (x, a_2\circ x \circ b_2^{-1})$ є
-  скінченно-становим розв'язком рівняння спряженності $a^\chi = b$.
-Далі
-$$(a_1\circ a_2)^x = b_1\circ b_2$$
-і тому % , скориставшись наступними співвідношеннями
-% $$(z_1\circ z_2)^{z_1} = z_2\circ z_1 $$ $$(z_1\circ z_2)^{z_2^{-1}}
-% = z_2\circ z_1 $$ $$(a_2\circ a_1)^{a_2\circ x\circ b_1} = b_2\circ
-% b_1$$
-$$a^{\hat{x}} = (x^{-1}, b_2\circ x^{-1} \circ a_2^{-1}) \circ (a_1,a_2)\circ \sigma \circ (x, a_2\circ x \circ b_2^{-1}) =$$
-$$= (x^{-1}\circ a_1 \circ (a_2\circ x \circ b_2^{-1}),(b_2\circ x^{-1} \circ a_2^{-1})\circ a_2 \circ x )\circ \sigma= $$
-$$= ((x^{-1}\circ (a_1 \circ a_2)\circ x) \circ b_2^{-1},b_2)\circ \sigma= ((b_1,b_2) \circ b_2^{-1},b_2)\circ \sigma =$$ $$ =(b_1,b_2)\circ \sigma = c $$
-Оскільки автоморфізми $x, a_2, b_2$ - скінченно-станові, то і
-$a_2\circ x \circ b_2^{-1}$ є скінченно-становим. Отже $\hat{x}\in
-FAutT_2$, щ.т.д.
-\end{proof}
-
-Застосувавши лему \ref{unique_solution_upper_vertex} n разів отримаємо рекурсивний критерій спряженності сферично-транзитивних скінченно-станових
-  ізометрій дерева $T_2$:
-\begin{theorem}\label{conj_null_full_izom}
-  Нехай $a, b$ - сферично-транзитивні скінченно-станові
-  ізометрії дерева $T_2$. Ізометрії $a$ та $b$ спряжені в $FAutT_2$ тоді, і
-  тільки тоді, коли $\varphi^n(a)$ та $\varphi^n(b)$ спряжені в
-  $FAutT_2$ для деякого $n \in \mathbb{N}$.
-\end{theorem}
 
 
 \begin{thebibliography}{1}
