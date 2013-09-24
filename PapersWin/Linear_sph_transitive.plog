@@ -1,0 +1,6 @@
+Chikrii Softlab pseudoTeX 3.0 report.
+http://www.chikrii.com, mailto: support@chikrii.com
+
+Linear_sph_transitive.tex (Ln 4) Warning: Can't find pseudoTeX definition for class/package (upref)
+Linear_sph_transitive.tex (Ln 34) Syntax Error: Undefined control sequence (\abstractname) within (\begin)
+Linear_sph_transitive.tex (Ln 180) Syntax Error: Undefined control sequence (\refname) within (\begin)
