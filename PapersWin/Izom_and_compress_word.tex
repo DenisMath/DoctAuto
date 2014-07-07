@@ -1,36 +1,52 @@
-\input{SciNotes}
-%\documentclass{paper}
+\documentclass[a4paper,12pt]{article}
+%\usepackage{a4wide}
+\usepackage[cp1251]{inputenc}
+\usepackage[english,russian,ukrainian]{babel}
+\usepackage{amsfonts,amssymb,amsmath,amsthm,amscd,latexsym}
 \usepackage{graphicx}
-\usepackage{psfrag}
+\usepackage[matrix,arrow,curve]{xy}
+%\pagestyle{headings}
+\usepackage{fancyhdr}
+\fancyfoot{} \rhead{\thepage} \cfoot{} \lhead{}
+\renewcommand{\headrulewidth }{ 0pt}
+\pagestyle{fancy} \sloppy
+\parindent = 1 cm
+\topmargin - 16mm \textwidth  160mm \textheight 250mm
+\oddsidemargin 10mm \evensidemargin 7mm
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}%
+{\hbox{$\mathsurround=0pt #1$}}{}}
+\newcommand{\bb}[1]{{\bf #1}}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\numberwithin{equation}{subsection}
+\newtheorem{theorem}{Теорема}[subsection]
+\newtheorem{lemma}{Лема}[subsection]
+\newtheorem{corollary}{Наслідок}[subsection]
+\newtheorem{remark}{Зауваження}[subsection]
+\newtheorem{definition}{Означення}[subsection]
+\newtheorem{example}{Приклад}[subsection]
+\newtheorem{hyp}{Гіпотеза}[subsection]
+\renewcommand{\baselinestretch}{1.5}
 
+\begin{document}
+УДК 517.5
 
-\newtheorem{lemma}{Лема}
-\newtheorem{proposition}{Proposition}
-\newtheorem{theorem}{Теорема}
-\newtheorem{result}{Наслідок}
-\newtheorem{example}{Приклад}
-\newtheorem{definition}{Означення}
-\newtheorem{corollary}{Наслідок}
-\newtheorem{remark}{Зауваження}
-\unitlength=0.75pt
+{\bf Морозов~Д.~І.}
 
-\tolerance = 9999
+{\bf Ізометрії та стискаючи функції кільця $Z_2$.}
 
+{\sl( Дослідження
+ ізометричності функцій кільця $Z_2$.)}
+\bigskip
 
+{\bf Аннотація}
 
+ Робота є продовженням роботи \cite{morozov1}, у якій досліджується ізометричність поліномів  кільця $Z_2$. У данній роботі  вивчається представлення автоморфізмів бінарного кореневого дерева  функціями  кільця $Z_2$.
 
-\newcommand{\journalname}{Фізико-математичні науки}
+{\rm \textbf{ Ключові
+      слова:} кореневе дерево, автоморфізм дерева, ізометрія, 2-адична функція }3
 
-\newcommand{\UDK}{\bf УДК 517.5} \newcommand{\authors}{Морозов~Д.~І.}
-\newcommand{\titletext}{Ізометрії та стискаючи функції кільця $Z_2$} \newcommand{\smalltitletext}{Дослідження
- ізометричності функцій кільця $Z_2$}
-\newcommand{\abstracttext}{ Робота є продовженням роботи \cite{morozov1}, у якій досліджується ізометричність поліномів  кільця $Z_2$. У данній роботі  вивчається представлення автоморфізмів бінарного кореневого дерева  функціями  кільця $Z_2$.
+{\bf Annotation}
 
-  {\rm \textbf{ Ключові
-      слова:} кореневе дерево, автоморфізм дерева, ізометрія, 2-адична функція }}
-
-\newcommand{\authorsAlt}{D.~Morozov}
-\newcommand{\titletextAlt}{Isometrics and compressing functions of the ring $Z_2$.}  \newcommand{\abstracttextAlt}{
 This work is a continuation of paper \cite {morozov1}, which investigated izometrical polynomials of the ring $ Z_2 $. In this paper we study representations of automorphisms of binary rooted tree with functions of ring $ Z_2 $. The aim of the work is to construct requirements which describes isometrical functions over the ring of
 integer 2-adic numbers. 
 This work  devoted to the possibility of providing 
@@ -40,15 +56,9 @@ technique. Izometric and compression functions build the important class of 2-ad
 paper.
 
 
-  {\rm \textbf{ Keywords: }rooted tree, tree automorphism, izometries, 2-adic function}}
+  {\rm \textbf{ Keywords: }rooted tree, tree automorphism, izometries, 2-adic function}
 
-\setcounter{page}{30}
 
-\allowdisplaybreaks[1]
-\begin{document}
-\pagestyle{myheadings}\thispagestyle{empty} \maketitle
-%\large
-\begin{multicols}{2}
 Вивчення властивостей групи автоморфізмів кореневого однорідного дерева є надзвичайно актуальним. Ця тема висвітлюється у роботах Р.І.Григорчука, В.І.Сущанського, С.Сідкі, Ч.К.Гупти та інших дослідників.
 
  Зручною для роботи з автоморфізмами кореневого однорідного дерева валентності p є техніка їх представлення у вигляді функцій кільця цілих p-адичних чисел $Z_p$.
@@ -106,6 +116,7 @@ t_1+x^2)-(2^{2n}\cdot t_2^2+2\cdot 2^n\cdot x\cdot t_2+x^2)=$$$$= 2^{n+1}(t_2-t_
 \end{example}
 
 Втім клас функцій, що є автоморфізмами дерева є досить широким. Далі наводиться індуктивна побудова класу функцій  кільця $Z_2$, що є стискаючими. В цьому класі виділяється підможина, що відповідає ізометріям, а отже автоморфізмам кореневого однорідного дерева.
+ 
 \subsection{Стискаючи функції кільця $Z_2$}
 Означимо метрику $\rho$ на кільці $Z_2$. Кожен елемент $x\in Z_2$ можна єдиним чином представити у вигляді $x=u*2^n$, де $u$ - обертовний елемент кільця $Z_2$.
 
@@ -368,14 +379,6 @@ $\{x_n\}$ послідовність елементів із $M$, збіжна к $x$ в $Z_2$.
  Оскільки $ f(x)=a*x+1, \ a \in Z_2^{*} $ є ізометрією, а для $a=4*c+1, c\in Z_2 $ $\ f(x)=a*x+1$ є шарово-транзитивною ізометрією і $I[a*x+1](x)=\frac{a^x-1}{a-1}$ то, згідно з теоремою \ref{Prim_Rec}  $g(x)==\frac{a^x-1}{a-1} \ (a=4*c+1, c\in Z_2 )$ є ізометрією.
   \end{example}
 
-
-\end{multicols}
-
-\bigskip
-
-\begin{multicols}{2}
-%\input{lit-NaUKMA}
-
 \begin{thebibliography}{3}
 
 
@@ -385,15 +388,6 @@ $\{x_n\}$ послідовність елементів із $M$, збіжна к $x$ в $Z_2$.
 \bibitem{morozov1}{Морозов  Д.I.} Ізометричність поліномів над кільцем цілих 2-адичних чисел.
 
 / Науковi записки НаУКМА.  Серiя: Фiзико-математичнi науки. - 2011.–Т.113.-С.13-15
-
-
-
-
 \end{thebibliography}
-
-
-\end{multicols}
-
-\makeendtitle
 
 \end{document}
