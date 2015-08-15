@@ -1,0 +1,374 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[cp1251]{inputenc}
+\usepackage[ukrainian,english]{babel}
+\usepackage{amssymb,upref}
+\usepackage{amsmath,amsthm}
+\usepackage{multicol}
+\usepackage{geometry}
+\usepackage[dvips]{graphicx}
+\geometry{hmargin={2.0cm,2.0cm},vmargin={2.5cm,2.5cm},headheight=24pt}%
+\usepackage{fancyhdr}
+\pagestyle{fancy}%
+\lhead{\footnotesize\itshape Серія: фізико-математичні науки}%
+\chead{\footnotesize\bfseries 2014\\}%
+\rhead{\footnotesize\itshape Series: Physics {\slshape\&} Mathematics}%
+\renewcommand{\headrulewidth}{0pt}
+\lfoot{}\cfoot{}\rfoot{}%
+\fancypagestyle{plain}{%
+\lfoot{\footnotesize \copyright\ D.I.~Morozov, 2012}%
+}
+
+\setlength{\parindent}{7mm}
+
+\makeatletter
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {-3.5ex \@plus -1ex \@minus -.2ex}%
+                                   {2.3ex \@plus.2ex}%
+                                   {\normalfont\bfseries}}
+\def\@biblabel#1{#1.}
+\makeatother
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{cor}{Consequent}
+\newtheorem{rem}{Note}
+\newtheorem*{proo}{Proof}
+\newtheoremstyle{definition}
+  {}
+  {}
+  {}
+  {}
+  {\itshape}
+  {.}
+  {.5em}
+  {}
+\theoremstyle{definition}
+\newtheorem{defi}{Definition}[section]
+\newtheorem{ex}{Example}
+
+\newcommand{\sub}{Sub_\varphi(\Omega)}
+\newcommand{\SSub}{\mathrm{SSub}}
+
+\newcommand{\E}{\textsf E}
+\newcommand{\R}{\mathbb{R}}
+\renewcommand{\P}{\mathbf{P}}
+\newcommand{\pr}{\mathbf{P}}
+
+\newcommand{\N}{\textit{\textsf{N}}}
+\renewcommand{\H}{\textit{\textsf{H}}}
+\renewcommand{\d}{\,\mathrm{d}}
+
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Wr}{\mathop{\font\xx=cmsy10 at 18pt \hbox{\xx \char111}}}
+
+\newcommand{\uu}{\mathrm{u}}
+%\let\subgroupeq\leqslant
+%\let\supgroupeq\geqslant
+%\DeclareMathOperator*{\X}{\times}
+
+\let\le\leqslant
+\let\leq\leqslant
+\let\ge\geqslant
+\let\geq\geqslant
+
+\def\labelenumi{\theenumi)}
+
+
+\begin{document}
+\thispagestyle{plain}
+
+УДК 512.54
+
+\setlength{\columnsep}{7mm}%
+\setlength{\columnseprule}{.4pt}
+\begin{multicols}{2}
+
+\begin{flushleft}
+D.I.~Morozov, researcher working on habilitation.\\
+\vspace{0.5cm}
+
+{\bfseries Upper approximation of spherical-transitive elements' centralizers in $FAutT_2$}
+\end{flushleft}
+
+\medskip
+
+{\itshape In this work the centralizer of  spherical-transitive finite-state automorphisms is investigated.\\
+
+\bigskip
+
+
+Key Words: rooted tree, automorphism group, state,
+centralizer.\\
+\vfill
+}
+
+
+
+% {\selectlanguage{ukrainian}
+
+% \begin{flushleft}
+% Д.І.~Морозов, докторант.\\
+
+% \vspace{0.5cm}
+
+% {\bfseries }
+
+
+% \end{flushleft}
+
+% \medskip
+
+% {\itshape \\
+
+
+% }
+
+% \bigskip
+
+% }
+
+\end{multicols}
+
+E-mail: denis.morozov178@gmail.com
+
+Article presented by Dr. Yu. Bodnarchuk %
+
+
+\setlength{\columnsep}{4mm}%
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+\section{Introduction}
+
+In this paper, we shall use the following definitions:
+
+\begin{defi}
+
+$T_2$ - binary rooted tree,
+
+$AutT_2$ - group of automorphisms of $T_2$,
+
+$FAutT_2$ - group of finite-state automorphisms $T_2$,
+
+$x*a$ -  effect of the automorphism $a$ onto the end $x$ of a tree $T_2$,
+
+$a\circ b$ - superposition of the automorphisms $a$ and $b$ of a tree $T_2$,
+
+$Z_2$ - ring of integer 2-adic numbers,
+
+we shall state, that an automorphism $\chi_0$ is a 0-~solution of an equation $a^{\chi_0}=b$, if $0*\chi_0=0$
+\end{defi}
+
+Let's identify an automorphism $a$ of a tree $T_2$ as a function $f_a:Z_2\rightarrow Z_2$ in the following way:
+$$x*a = f_a(x)$$
+
+In study \cite{Z} the author has proved the following theorem:
+
+ \begin{thm}\label{SPTR_centralizer}
+   Let $x$ be a spherical-transitive automorphism. Then
+ $$C_{AutT_2}(x)=\{x^p|p\in Z_2\} $$
+ \end{thm}
+
+The aim of this study is to research the centralizers of the spherical-transitive elements in $FAutT_2$, as there is no result for $FAutT_2$,
+similar to the theorem \ref{SPTR_centralizer}.
+
+
+
+ \section{Centralizers of the spherical-transitive elements in $FAutT_2$}
+
+Let $\varepsilon$ be an adding machine, that is $x*\varepsilon = x+1$. Then, we have the following lemma:
+\begin{lemma}\label{nul_epsilon}
+For $p\in Z_2$ we have an equality:
+   $$0*\varepsilon^p=p$$
+\end{lemma}
+\begin{proo}
+Since $t*\varepsilon^p = t+p$, therefore $0*\varepsilon^p = 0+p = p $.
+\end{proo}
+
+\begin{thm}\label{nul_action_all}
+  Let $\chi_x$ be a 0-solution of the conjugacy equation $\varepsilon^t = x$ with respect to the automorphism t. Then we have an equality:
+   $$0*x^p=p*\chi_x$$
+\end{thm}
+\begin{proo}
+Since  $\varepsilon^{\chi_x} = x$, therefore we have a correspondence:
+$$x^p = (\chi_x^{-1}\circ\varepsilon\circ\chi_x)^p=\chi_x^{-1}\circ\varepsilon^p\circ\chi_x$$
+That is, according to the lemma \ref{nul_epsilon} and the equation $0*\chi_x = 0$ we have:
+$$0*x^p=0*(\chi_x^{-1}\circ\varepsilon^p\circ\chi_x) = $$ $$=((0*\chi_x^{-1})*\varepsilon^p)*\chi_x) = (0*\varepsilon^p)*\chi_x =  p*\chi_x$$  q.e.d.
+\end{proo}
+
+We have the following lemma:
+ \begin{lemma} Let $x$ be a spherical-transitive automorphism. Then
+ $$0*C_{AutT_2}(x)=Z_2 $$
+  \end{lemma}
+  \begin{proo}
+According to the theorem \ref{SPTR_centralizer} $$C_{AutT_2}(x)=\{x^p|p\in Z_2\}$$ Then, using the theorem \ref{nul_action_all}, we obtain: $$0*x^{Z_2}=Z_2*\chi_x$$
+where  $\chi_x$ is a 0-solution of the conjugacy equation $\varepsilon^t = x$ with respect to the automorphism t. 
+
+Since $\chi_x$ is an automorphism, therefore $$Z_2*\chi_x = Z_2$$ q.e.d.
+  \end{proo}
+
+  \begin{defi}
+    Let us define a set $F_p ( p\in Z_2 )$ in the following way:
+
+$p\in F_p$,
+
+if $2t+1\in F_p$, then $t\in F_p, t+1\in F_p $,
+
+if $2t\in F_p$, then $t\in F_p $.
+
+We shall state, that $t_k$ belongs to the k-th level in $F_p$, if obtained from $p$ in k steps.
+ \end{defi}
+
+ \begin{defi}
+     Let us define a set $P_{m,n} ( m\in \mathbb{Z}, n\in \mathbb{Z}^+\cup 0 )$ in the following way:
+
+$m\in P_{m,n}$,
+
+if $2t+1\in P_{m,n}$, then $t - n\in P_{m,n},\  t+n+1\in P_{m,n} $,
+
+if $2t\in P_{m,n}$, then $t\in P_{m,n} $.
+
+We shall state, that $t_k$ belongs to the k-th level in $P_{m,n}$, if obtained from $m$ in k steps.
+ \end{defi}
+
+ \begin{lemma}\label{F_P_equal}
+   Let a  2-adic quasiperiodic number  $p$ equals to $\frac{m}{2n+1}$, where $ m\in \mathbb{Z}, n\in \mathbb{Z}^+\cup 0$. Then the sets $P_{m,n}$ and  $F_p $ are both finite or infinite.
+ \end{lemma}
+ \begin{proo}
+Since we have the following equalities:
+   $$\frac{2m+1}{2n+1}=2\frac{m-n}{2n+1}+1$$
+   $$\frac{2m}{2n+1}=2\frac{m}{2n+1}$$
+therefore in $F_p$ $\frac{2m+1}{2n+1}$ generates $\frac{m-n}{2n+1}$ and  $\frac{m+n+1}{2n+1}$, and $\frac{2m}{2n+1}$ generates $\frac{m}{2n+1}$.
+
+Therefore, if $t_k$ belongs to the k-th level in $F_p$, then $t_k(2n+1)$  belongs to the k-th level in $P_{m,n}$, and vice versa,  if $t_k'$ belongs to the k-th level in $P_{m,n}$, then $\frac{t_k'}{2n+1}$ belongs to the k-th level in  $F_p$. Therefore, we have an equality:
+$$|P_{m,n}| = |F_p|$$
+q.e.d.
+ \end{proo}
+
+ \begin{lemma}\label{P_finite}
+   A set $P_{m,n} ( m\in \mathbb{Z}, n\in \mathbb{Z}^+\cup 0 )$ is finite.
+ \end{lemma}
+ \begin{proo}
+   According to the definition, if $t\in P_{m,n}$, then either $\frac{t}{2}$ or $\frac{t-1}{2}-n$ and $\frac{t-1}{2}+n+1$.Let $t_k$
+belong to the $k$-th level in $P_{m,n}$, then we have an equality:
+$$t_k = \frac{t_{k-1}+a*(2n+1)}{2}, a=0,1,-1$$
+After applying this equality k  times, we obtain:
+$$t_k = \frac{m}{2^k}+(2n+1)(\frac{a_0}{2^k}+\dots+\frac{a_{k-1}}{2})$$
+Since $|a_i|\leq 1$, we have the following estimation:
+$$|t_k| = \left| \frac{m}{2^k}+(2n+1)(\frac{a_0}{2^k}+\dots+\frac{a_{k-1}}{2})\right|\leq$$ $$\leq \left| \frac{m}{2^k}\right|+|2n+1|\leq |m|+2n+1$$
+Thus, the number of elements of the set $P_{m,n}$ is limited by an inequality:
+$$\left|P_{m,n}\right|\leq 2(|m|+2n+1)$$
+so the set $P_{m,n}$ is finite, q.e.d.
+ \end{proo}
+
+\begin{lemma}\label{F_finite}
+  A set $F_p$ is finite if and only if $p$ is a quasiperiodic number.
+\end{lemma}
+\begin{proo}
+
+  $\Rightarrow$ For $2t+1$ and $2t$ a number $t$ is obtained by skipping the last digit of the binary representation, therefore $F_p$ contains all numbers,  obtained from  $p$ by skipping several last digits. If $p$ is not quasiperiodic, then we have an infinite amount of such numbers, thus  $F_p$ is not finite.
+
+ $\Leftarrow$ $p$ is a quasiperiodic number if and only if $p=\frac{m}{2n+1} (m\in\mathbb{Z}, n\in \mathbb{Z}^+\cup 0)$.
+Therefore, according to the lemmas \ref{F_P_equal} and \ref{P_finite} the set $F_p$  is finite.
+\end{proo}
+
+ 
+\begin{thm}\label{adding_machine_fs_centralizer}
+   Let $\varepsilon$ be an adding machine. Then
+ $$C_{FAutT_2}(\varepsilon)=\{\varepsilon^p|p\in Z_2 \cap \mathbb{Q}\} $$ 
+\end{thm}
+\begin{proo}
+  Since we have an equality
+$$C_{FAutT_2}(\varepsilon)=C_{AutT_2}(\varepsilon)\cap FAutT_2$$
+therefore, according to the theorem \ref{SPTR_centralizer}, the elements of the centralizer $C_{FAutT_2}(\varepsilon)$ are described as $\{\varepsilon^p|\varepsilon^p\in FAutT_2\}$. Obviously, if $p$ is not a quasiperiodic number, then $\varepsilon^p$ is infinite-state, as it translates a quasiperiodic number 0 into a non-quasiperiodic number  $p$.
+Then, let $p\in Z_2 \cap \mathbb{Q}\}$, or be quasiperiodic. According to the lemma \ref{F_finite}  the set $F_p$ is finite. On the other hand, we have the equalities:
+$$\varepsilon^{2t+1} = (\varepsilon^t,\varepsilon^{t+1})\circ \sigma$$
+$$\varepsilon^{2t} = (\varepsilon^t,\varepsilon^t)$$
+Thus, the states of the automorphism $\varepsilon^{p}$ are limited to the automorphisms, described as $$\varepsilon^t, t\in F_p$$ 
+Since $F_p$ is finite, therefore $\varepsilon^{p}$ is a finite-state automorphism, q.e.d.
+\end{proo}
+
+ \begin{thm} \label{adding_machine_fs_orbite}
+Let $\varepsilon$ be an adding machine. Then
+ $$0*C_{FAutT_2}(\varepsilon)=(Z_2 \cap \mathbb{Q})$$
+  \end{thm}
+  \begin{proo}
+According to the theorem \ref{adding_machine_fs_centralizer} $$C_{FAutT_2}(\varepsilon)=\{\varepsilon^p|p\in Z_2 \cap \mathbb{Q}\}$$ Then, using the lemma \ref{nul_epsilon}, we obtain: $$0*\varepsilon^{Z_2 \cap \mathbb{Q}}=Z_2 \cap \mathbb{Q}$$
+q.e.d.
+  \end{proo}
+
+The theorems \ref{adding_machine_fs_centralizer} and  \ref{adding_machine_fs_orbite}   can be applied to research of finite-state conjugacy with
+ the automorphism $\varepsilon$ (an adding machine). The following theorem illustrates that:
+
+\begin{thm}
+  If a 0-solution $t_0$ of a conjugacy equation with respect to $t$
+ $$\varepsilon^t=a$$
+ is not finite-state, then this equation has no finite-state solutions.
+\end{thm}
+\begin{proo}
+  Let us assume, that $t_0$ is infinite-state, and the equation $\varepsilon^t=a$ has a finite-state solution $t':p\rightarrow 0$, where $p$ is a quasiperiodic number. Since each solution can be uniquely represented as $$t' = x\circ t_0, x \in C_{FAutT_2}(\varepsilon)$$ та $p*\varepsilon^{-p}= 0$, then, according to the theorem \ref{adding_machine_fs_centralizer} $t' = \varepsilon^{-p}\circ t_0 $. Since $t_0$ is infinite-state, and $\varepsilon^{-p}$ is finite-state, therefore  $t'$ is infinite-state. We've come to a contradiction.
+\end{proo}
+
+\begin{thm}\label{include_centralizer}
+   Let $a$ be a spherical-transitive automorphism. Then
+ $$C_{FAutT_2}(a) \subseteq \{a^{(p*\chi_{a}^{-1})}|p\in Z_2 \cap \mathbb{Q}\} $$ 
+where $\chi_a$ is a 0-solution of the conjugacy equation $\varepsilon^t=a$ with respect to $t$.
+ \end{thm}
+\begin{proo}
+  We have the following equality:
+$$0*a^{(p*\chi _{a}^{-1})} = p $$ 
+Indeed, according to the theorem  \ref{nul_action_all} we obtain:
+$$0*a^{(p*\chi _{a}^{-1})} = (p*\chi_{a}^{-1})*\chi_{a} = p*(\chi_{a}^{-1}\circ \chi_a) = p $$ 
+% Thus, $a^{(p*\chi _{a}^{-1})}$ can be finite-state only if $p\in Z_2 \cap \mathbb{Q} $. On the other hand,
+% according to the theorem \ref{SPTR_centralizer} all the elements of a centralizer $C_{AutT_2}(a)$ can be represented as $a^{(p*\chi _{a}^{-1})}$, since $\chi_a^{-1}$ is an automorphism $Z_2$. Taking into account that
+$$C_{FAutT_2}(a) = C_{AutT_2}(a)\cap FAutT_2$$
+we obtain an inclusion
+ $$C_{FAutT_2}(a) \subseteq \{a^{(p*\chi_{a}^{-1})}|p\in Z_2 \cap \mathbb{Q}\} $$ 
+q.e.d.
+\end{proo}
+ 
+ %  \begin{defi} Let us define a function $h_x:C_{AutZ_2}(x)\rightarrow Z_2$, where $x$ is a spherical-transitive finite-state automorphism, in the following way: $$h_x(u)=0*u$$
+ % \end{defi}
+
+ % Note, that according to the definition
+
+ % \begin{thm} A finite-state automorphism $x$ is spherical-transitive if and only if
+ % $h_x:C_{AutT_2}(x)\rightarrow Z_2$ is a bijection.
+ % \end{thm}
+
+ 
+   \begin{thm} Let $x$ be a spherical-transitive finite-state automorphism. Then
+ $$0*C_{FAutT_2}(x)\subseteq(Z_2 \cap \mathbb{Q})$$
+ \end{thm}
+ \begin{proo}
+   According to the theorem \ref{include_centralizer} we have an inclusion:
+$$0*C_{FAutT_2}(x)\subseteq \{0*a^{(p*\chi_{a}^{-1})}|p\in Z_2 \cap \mathbb{Q}\} = Z_2 \cap \mathbb{Q}$$
+ \end{proo}
+
+ 
+
+
+
+%\renewcommand{\refname}{Список використаних джерел}
+\begin{thebibliography}{00}
+%\addcontentsline{toc}{section}{Список використаних джерел}
+\makeatletter
+\renewcommand{\@biblabel}[1]{#1.\hfil}
+\makeatother
+
+\bibitem{Z} {\em Морозов Д.І.} Централiзатори  шарово-однорiдних  автоморфiзмiв однорiдного дерева валентностi p./ Д.І.~Морозов// Вiсник Київського  ун-ту.  Серiя:  фiзико-математичнi  науки.  -  2007.–  вип.№4  – C.52-54.  
+
+\end{thebibliography}
+
+
+\begin{flushright}
+ 2014
+\end{flushright}
+\end{multicols}
+
+
+
+\end{document}

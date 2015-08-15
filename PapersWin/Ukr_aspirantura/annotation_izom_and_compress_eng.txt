@@ -1,0 +1,8 @@
+The aim of the work is to construct requirements which describes isometrical functions over the ring of
+integer 2-adic numbers. 
+This work 
+devoted to the possibility of providing 
+automorphisms of homogeneous rooted tree with 2-adic isometries.
+This paper continues investigations of 2-adic groups’ automatous with the 2-adic isometrical functions’
+technique. Izometric and compression functions build the important class of 2-adic function  to describe the group automatous that’s why we investigate them in this
+paper.

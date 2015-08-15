@@ -1,0 +1,181 @@
+\input{SciNotes}
+%\documentclass{paper}
+\usepackage{graphicx}
+\usepackage{psfrag}
+
+
+\newtheorem{lemma}{Лема}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Теорема}
+\newtheorem{result}{Наслідок}
+\newtheorem{example}{Приклад}
+\newtheorem{definition}{Означення}
+\newtheorem{corollary}{Наслідок}
+\unitlength=0.75pt
+
+\tolerance = 9999
+
+
+
+
+\newcommand{\journalname}{НАУКОВІ ЗАПИСКИ. Том 100. Фізико-математичні науки}
+
+\newcommand{\UDK}{\bf УДК 517.5} \newcommand{\authors}{Морозов~Д.~І.}
+\newcommand{\titletext}{Спряженність транзитивно-стабільних
+  автоморфізмів в $FAutT_2$} \newcommand{\smalltitletext}{Дослідження
+  спряженності транзитивно-стабільних автоморфізмів в $FAutT_2$}
+\newcommand{\abstracttext}{ Роботу присвячено дослідженню спряженності
+  автоморфізмів кореневого однорідного дерева
+  валентності 2 в групі скінченно-станових автоморфізмів цього
+  дерева. В цій групі побудовано рекурсивний критерій спряженності таких автоморфізмів.
+
+  {\rm \textbf{ Ключові
+      слова:} кореневе дерево, автоморфізм дерева, група
+    скінченно-станових автоморфізмів, спряженність автоморфізмів}}
+
+\newcommand{\authorsAlt}{D.~Morozov}
+\newcommand{\titletextAlt}{Conjugacy of 
+  automorphisms in $FAutT_2$.}  \newcommand{\abstracttextAlt}{The work
+  is devoted to the research  conjugacy of 
+  automorphisms of a rooted homogenious tree of valency 2 in a group
+  of finite-state automorphisms of this tree. Conjugacy recursive criterion in this group has been built.
+
+  {\rm \textbf{ Keywords: }rooted tree, tree automorphism, group of
+    finite-state automorphisms, automorphisms conjugacy}}
+
+\setcounter{page}{30}
+
+\allowdisplaybreaks[1]
+\begin{document}
+\pagestyle{myheadings}\thispagestyle{empty} \maketitle
+%\large
+\begin{multicols}{2}
+ Метою даної роботи є дослідження проблеми скінченно-станової спряженості для автоморфізмів бінарного кореневого дерева. Запропонований рекурсивний критерій надає можливість еффективного розв'язання проблеми скінченно-станової спряженності для певного класу автоморфізмів.
+ 
+\begin{definition}\label{marked_type_tree_def}
+Означимо {\bf розмічене дерево типу } $D_f$ для автоморфізму $f \in AutZ_2$ наступним чином. 
+\begin{itemize}
+\item Корінь дерева помітимо автоморфізмом $f$.
+\item Якщо вершина n-го рівня розміченого дерева типу помічена автоморфізмом $a = (b,c)\circ\sigma$, то з n+1-им рівнем цю вершину з'єднує тільки одне ребро. Іншу вершину цього ребра помітимо автоморфізмом $b\circ c$
+\item Якщо вершина n-го рівня розміченого дерева типу помічена автоморфізмом $a = (b,c)$, то з n+1-им рівнем цю вершину з'єднує два ребра. Іншу вершину одного ребра помітимо автоморфізмом $b$, другого ребра -  $c$.
+\end{itemize}
+Автоморфізм, що помічає вершину $t\in D_f$ дерева типу позначимо як $D_f(t)$.
+Множину вершин n-го рівня дерева $D$ позначимо як $L_n(D)$.
+\end{definition}
+
+%\begin{remark}\label{child_type_subtree}
+За побудовою, піддерево розміченного дерева типу співпадає з розміченним деревом типу автоморфізму, що помічає корінь цього піддерева.
+%\end{remark}
+\begin{lemma}\label{unique_solution_upper_vertex}
+Нехай $$a = (a_1,a_2)\circ\sigma, b = (b_1,b_2)\circ\sigma$$ $$a' = a_1\circ a_2 ,b' = b_1\circ b_2 $$ та $a'$ і $b'$ спряжені в $FAutT_2$.
+
+ Тоді $a$ і $b$ також спряжені в $FAutT_2$.
+\end{lemma}
+\begin{proof}
+За умовою леми існує $x\in FAutT2$, такий, що $(a')^x = b' $.
+
+ Покажемо, що $\hat{x} = (x, a_2\circ x \circ b_2^{-1})$ є скінченно-становим розв'язком рівняння спряженності
+$$a^\chi = b$$
+
+ Далі
+$$(a_1\circ a_2)^x = b_1\circ b_2$$
+ і тому % , скориставшись наступними співвідношеннями
+% $$(z_1\circ z_2)^{z_1} = z_2\circ z_1 $$
+% $$(z_1\circ z_2)^{z_2^{-1}} = z_2\circ z_1 $$
+% $$(a_2\circ a_1)^{a_2\circ x\circ b_1} = b_2\circ b_1$$
+$$a^{\hat{x}} = (x^{-1}, b_2\circ x^{-1} \circ a_2^{-1}) \circ (a_1,a_2)\circ \sigma \circ (x, a_2\circ x \circ b_2^{-1}) =$$
+$$= (x^{-1}\circ a_1 \circ (a_2\circ x \circ b_2^{-1}),(b_2\circ x^{-1} \circ a_2^{-1})\circ a_2 \circ x )\circ \sigma= $$
+$$= ((x^{-1}\circ (a_1 \circ a_2)\circ x) \circ b_2^{-1},b_2)\circ \sigma=$$ $$= ((b_1,b_2) \circ b_2^{-1},b_2)\circ \sigma =$$ $$ =(b_1,b_2)\circ \sigma = c $$
+Оскільки автоморфізми $x, a_2, b_2$ - скінченно-станові, то і $a_2\circ x \circ b_2^{-1}$ є скінченно-становим. Отже $\hat{x}\in FAutT_2$, щ.т.д.
+\end{proof}
+\begin{theorem}\label{marked_trees_conj}
+Автоморфізми $a$ та $b$ спряжені в $FAutT_2$ тоді, і лише тоді, коли існує ізоморфізм $\alpha$ їх розмічених дерев типу($D_a*\alpha = D_b$), для якого автоморфізми в відповідних вершинах попарно спряжені в $FAutT_2$
+$$\forall t\in L_n(D_a), \exists x\in FAutT_2,\ D_a(t)^x= D_b(t*\alpha) $$
+\end{theorem}
+\begin{proof}
+ $\Rightarrow$
+
+Дійсно, нехай $a = (a_1,a_2), b = (b_1,b_2), a^x = b$
+Тоді, або $x = (x_1, x_2)$ і маємо
+$$a^x = (x_1^{-1},x_2^{-1})\circ (a_1,a_2)\circ (x_1, x_2) = (a_1^{x_1}, a_2^{x_2} ) = (b_1, b_2) $$ і, отже 
+$$b_1 = a_1^{x_1} \quad b_2 = a_2^{x_2} $$
+і при ізоморфізмі розмічених дерев типу $D_a$ та $D_b$  вершина, що помічена $a_1$ переходить в вершину, що помічена $b_1$, а вершина , що помічена $a_2$ переходить в вершину, що помічена $b_2$.
+
+ або $x = (x_1, x_2)\circ \sigma$ і маємо
+$$a^x = \sigma \circ (x_1^{-1},x_2^{-1})\circ (a_1,a_2)\circ (x_1, x_2) \circ \sigma =$$
+$$= \sigma \circ (a_1^{x_1}, a_2^{x_2} )\circ \sigma  =$$ $$= (a_2^{x_2}, a_1^{x_1} )\circ \sigma\circ \sigma = (a_2^{x_2}, a_1^{x_1} )= (b_1, b_2) $$ і, отже 
+$$b_1 = a_2^{x_2}  \quad b_2 = a_1^{x_1} $$
+
+і при ізоморфізмі розмічених дерев типу $D_a$ та $D_b$  вершина, що помічена $a_1$ переходить в вершину, що помічена $b_2$, а вершина , що помічена $a_2$ переходить в вершину, що помічена $b_1$.
+
+Далі, нехай $a = (a_1,a_2)\circ \sigma, b = (b_1,b_2)\circ \sigma, a^x = b$
+Тоді, або $x = (x_1, x_2)$ і маємо
+$$a^x = (x_1^{-1},x_2^{-1})\circ (a_1,a_2)\circ \sigma \circ (x_1, x_2) =$$
+ $$= (x_1^{-1}\circ a_1\circ x_2,x_2^{-1}\circ a_2 \circ x_1 )\circ \sigma = (b_1, b_2)\circ \sigma$$ і, отже 
+$$b_1 =x_1^{-1}\circ a_1\circ x_2 $$
+$$b_2 = x_2^{-1}\circ a_2 \circ x_1 $$
+$$b_1\circ b_2 = (a_1\circ a_2)^{x_1} $$
+$$b_2\circ b_1 = (a_2\circ a_1)^{x_2} $$
+
+ або $x = (x_1, x_2)\circ \sigma$ і маємо
+$$a^x = \sigma \circ (x_1^{-1},x_2^{-1})\circ (a_1,a_2)\circ \sigma \circ (x_1, x_2) \circ \sigma =$$
+ $$=\sigma \circ  (x_1^{-1}\circ a_1\circ x_2,x_2^{-1}\circ a_2 \circ x_1 )\circ \sigma \circ \sigma =$$
+ $$= \sigma \circ  (x_1^{-1}\circ a_1\circ x_2,x_2^{-1}\circ a_2 \circ x_1 ) =  $$ $$= (x_2^{-1}\circ a_2 \circ x_1, x_1^{-1}\circ a_1\circ x_2 ) \circ \sigma = (b_1, b_2)\circ \sigma$$ і, отже 
+$$b_1 =x_2^{-1}\circ a_2 \circ x_1 $$
+$$b_2 = x_1^{-1}\circ a_1\circ x_2 $$
+$$b_1\circ b_2 =(a_2\circ a_1)^{x_2} $$
+$$b_2\circ b_1 =  (a_1\circ a_2)^{x_1} $$
+
+Згідно з вищезазначеним, відповідні автоморфізми дерева типу спряжені станами автоморфізму $x$.
+
+ $\Leftarrow$ Якщо такий ізоморфізм розміченних дерев типу існує, то автоморфізми, якими помічаются корені цих дерев, спряжені, отже автоморфізми $a$ та $b$ спряжені в $FAutT_2$.
+
+\end{proof}
+
+Зауважимо, що достатньо перевірити спряженність автоморфізмів хоча б одного рівня. Дійсно, згідно з лемою \ref{unique_solution_upper_vertex}, зі спряженності відповідних автоморфізмів $(n+1)$-го рівня випливає спряженність  автоморфізмів $n$-го рівня.  Отже, згідно з  теоремою \ref{marked_trees_conj}, має місце наступна теорема:
+\begin{theorem}\label{marked_trees_conj_level}
+
+Автоморфізми $a$ та $b$ спряжені в $FAutT_2$ тоді і лише тоді, коли існує ізоморфізм їх розмічених дерев типу($D_a*\alpha = D_b$), для якого  існує рівень, що всі автоморфізми в відповідних вершинах цього рівня попарно спряжені в $FAutT_2$
+$$\exists n\in\mathbb{N}, \forall t\in L_n(D_a), \exists x\in FAutT_2\ $$
+ $$D_a(t)^x= D_b(t*\alpha) $$
+\end{theorem}
+Зауважимо, що оскільки у спряженних автоморфізмів їх дерева типу ізоморфні, то в умові теореми \ref{marked_trees_conj_level} достатньо ізоморфізму $(D_a)_n$ та $(D_b)_n$
+
+\end{multicols}
+
+\bigskip
+
+\begin{multicols}{2}
+%\input{lit-NaUKMA}
+
+\begin{thebibliography}{3}
+
+
+\bibitem{koblic}
+{ Коблиц Н.} p-адические числа, p-адический анализ и дзета-функции
+/~Коблиц~Н.~---~1982~---~190~c.
+\bibitem{morozov1} {Морозов Д.I.}  Спряженiсть автоморфiзмiв, що
+  задаються лiнiйними функцiями в групi скiнченностанових
+  автоморфiзмiв кореневого сферично-однорiдного дерева.
+
+  / Вiсник
+  Київського ун-ту. Серiя: фiзико-математичнi науки. - 2008.- вип.№1 -
+  C.~40-43.
+\bibitem{morozov2} { Морозов Д.I.} Централiзатори шарово-однорiдних
+  автоморфiзмiв однорiдного дерева валентностi p.
+
+ / Вiсник Київського
+  ун-ту.  Серiя: фiзико-математичнi науки.  - 2007.- вип.№4 - C.52-54.
+
+
+
+
+
+\end{thebibliography}
+
+
+\end{multicols}
+
+\makeendtitle
+
+\end{document}

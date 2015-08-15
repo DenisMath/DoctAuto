@@ -1,0 +1,295 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[cp1251]{inputenc}
+\usepackage[ukrainian,english]{babel}
+\usepackage{amssymb,upref}
+\usepackage{amsmath,amsthm}
+\usepackage{multicol}
+\usepackage{geometry}
+\usepackage[dvips]{graphicx}
+\geometry{hmargin={2.0cm,2.0cm},vmargin={2.5cm,2.5cm},headheight=24pt}%
+\usepackage{fancyhdr}
+\pagestyle{fancy}%
+\lhead{\footnotesize\itshape Вісник Київського університету\\Серія: фізико-математичні науки}%
+\chead{\footnotesize\bfseries 2012, 2\\}%
+\rhead{\footnotesize\itshape Bulletin of University of Kyiv\\Series: Physics {\slshape\&} Mathematics}%
+\renewcommand{\headrulewidth}{0pt}
+\lfoot{}\cfoot{}\rfoot{}%
+\fancypagestyle{plain}{%
+\lfoot{\footnotesize \copyright\ D.I.~Morozov, 2013}%
+}
+
+\setlength{\parindent}{7mm}
+
+\makeatletter
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {-3.5ex \@plus -1ex \@minus -.2ex}%
+                                   {2.3ex \@plus.2ex}%
+                                   {\normalfont\bfseries}}
+\def\@biblabel#1{#1.}
+\makeatother
+
+\theoremstyle{plain}
+\newtheorem{thm}{Теорема}[section]
+\newtheorem{lemma}{Лема}
+\newtheorem{proposition}{Proposition}
+\newtheorem{cor}{Наслідок}
+\newtheorem{rem}{Зауваження}
+\newtheorem*{proo}{Доведення}
+\newtheoremstyle{definition}
+  {}
+  {}
+  {}
+  {}
+  {\itshape}
+  {.}
+  {.5em}
+  {}
+\theoremstyle{definition}
+\newtheorem{defi}{Означення}[section]
+\newtheorem{ex}{Приклад}
+
+\newcommand{\sub}{Sub_\varphi(\Omega)}
+\newcommand{\SSub}{\mathrm{SSub}}
+
+\newcommand{\E}{\textsf E}
+\newcommand{\R}{\mathbb{R}}
+\renewcommand{\P}{\mathbf{P}}
+\newcommand{\pr}{\mathbf{P}}
+
+\newcommand{\N}{\textit{\textsf{N}}}
+\renewcommand{\H}{\textit{\textsf{H}}}
+\renewcommand{\d}{\,\mathrm{d}}
+
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Wr}{\mathop{\font\xx=cmsy10 at 18pt \hbox{\xx \char111}}}
+
+\newcommand{\uu}{\mathrm{u}}
+%\let\subgroupeq\leqslant
+%\let\supgroupeq\geqslant
+%\DeclareMathOperator*{\X}{\times}
+
+\let\le\leqslant
+\let\leq\leqslant
+\let\ge\geqslant
+\let\geq\geqslant
+
+\def\labelenumi{\theenumi)}
+
+
+\begin{document}
+\thispagestyle{plain}
+
+УДК 512.54
+
+\setlength{\columnsep}{7mm}%
+\setlength{\columnseprule}{.4pt}
+\begin{multicols}{2}
+
+\begin{flushleft}
+D.I.~Morozov, researcher working on habilitation.\\
+\vspace{0.5cm}
+
+{\bfseries 2-adic model in solving finite-state conjugation problem for linear spherically-transitive automorphisms of the binary rooted tree.}
+\end{flushleft}
+
+\medskip
+
+{\itshape This article answers the   finite-state conjugacy question
+of piecewise-linear spherically-transitive automorphisms  of the binary rooted tree .\\
+
+\bigskip
+
+
+Key Words: rooted tree, automorphism group, state,
+centralizer.\\
+\vfill
+}
+
+
+
+{\selectlanguage{ukrainian}
+
+\begin{flushleft}
+Д.І.~Морозов, докторант.\\
+
+\vspace{0.5cm}
+
+{\bfseries 2-адична модель у вирішенні скінченно-станової спряженості кусочно-лінійних сферично-транзитивних
+  автоморфізмів кореневого бінарного дерева.  }
+
+
+\end{flushleft}
+
+\medskip
+
+{\itshape  Дана стаття дає відповідь на питання скінченно-станової спряженості
+ кусочно-лінійних сферично-транзитивних
+  автоморфізмів кореневого бінарного дерева.\\
+
+
+Ключові слова: кореневе дерево, група автоморфізмів, стан, централізатор.}
+
+\bigskip
+
+}
+
+\end{multicols}
+
+E-mail: denis.morozov178@gmail.com
+
+
+
+
+\setlength{\columnsep}{4mm}%
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+\section{Вступ}
+Результати, отримані при вивченні групи обертовних скінченних автоматів, мають чисельні застосування у computer science - в теорії інформації, кодування та формальних мов.
+
+Зауважимо, що група  обертовних  автоматів ізоморфна групі автоморфізмів однорідного кореневого
+дерева валентності p, де p - кількість елементів з алфавіту, над яким побудована відповідна автоматна група (див. \cite{Gr_1}).
+
+Дослідження групи автоморфізмів кореневого однорідного дерева за
+допомогою ізометрій кільця цілих p-адичних чисел надає зручну техніку
+для вирішення низки проблем, пов'язанних з цією групою. Отримаємо представлення данної групи у 2-адичній моделі наступним чином:
+
+ Поставимо у відповідність автоморфізму $a$ дерева $T_2$ функцію $a_f:Z_2\rightarrow Z_2$:
+$$a_f(\hat{x})=x*a$$ де x - кінець дерева $T_2$, $\hat{x}$ - відповідне представлення кінця x в кільці  $Z_2$ цілих 2-адичних чисел. 
+
+
+ \section{ Проблема скінченно-станової спряженності для
+ сферично-транзитивних кусочно-лінійних
+  автоморфізмів кореневого бінарного дерева}
+ Розглянемо
+вирішення проблеми скінченно-станової спряженності для
+ сферично-транзитивних кусочно-лінійних
+  автоморфізмів кореневого бінарного дерева.
+
+В статті \cite{M_1} було доведено наступні твердження ($FAutT_2$ - група скінченно-станових автоморфізмів кореневого бінарного дерева):
+\begin{lemma}\label{ficen3} 
+  $f(x)=p_1x+p_2 \in FAutT_2 \Leftrightarrow p_1,p_2 \in
+  Z_2\cap\mathbb{Q} $
+\end{lemma}
+
+\begin{thm}\label{4k_1_sph_transitive}
+  Автоморфізми $f(x)=(4k+1)x+(2t+1) (k, t\in Z_2)$ є
+  сферично-транзитивними.
+\end{thm}
+
+\begin{thm}\label{conj_ax_p}
+  Ізометрії $f_1(x)=(4k_1+1)x+1$ та $f_2(x)=(4k_2+1)x+1 \ (k_1,k_2 \in
+  Z_2^{\mathbb{Q}})$ спряжені в $FAutT_2 \Leftrightarrow
+  4k_1+1=4k_2+1$.
+\end{thm}
+
+В статті \cite{M_2} була доведена наступна теорема:
+\begin{thm}\label{conj_null_full_izom}
+  Нехай $a, b$ - сферично-транзитивні скінченно-станові
+  ізометрії кільця $Z_2$. Ізометрії $a$ та $b$ спряжені в $FAutT_2$ тоді, і
+  тільки тоді, коли $\varphi^n(a)$ та $\varphi^n(b)$ спряжені в
+  $FAutT_2$ для деякого $n \in \mathbb{N}$.
+\end{thm}
+Скористаємося ціми твердженнями далі.
+
+ 
+   Наприклад, за теоремою \ref{conj_ax_p} автоморфізми $5x+1$ та $5x+3$ спряженні в $FAutT_2$, а автоморфізми  $5x+1$ та $9x+1$ не спряженні в $FAutT_2$.
+ 
+
+Але теорема \ref{conj_ax_p} не дозволяє відповісти на питання, чи спряжені, наприклад, скінченно-станові шарово-транзитивні автоморфізми вигляду $(3x,15x+1)\circ\sigma$ та $(5x+2,9x+3)\circ\sigma$, або $(x,15x+1)\circ\sigma$ та $(3x,15x+1)\circ\sigma$.
+
+Метою данної статті є узагальнення теореми \ref{conj_ax_p} для класу скінченно-станових кусково-лінійних шарово-транзитивних автоморфізмів. 
+
+\begin{lemma}\label{null_linear_transitive}
+  Cкінченно-станова лінійна сферично-транзитивна ізометрія є 0-повною.
+\end{lemma}
+\begin{proo}
+  Дійсно, мають місце наступні рівності:
+$$(((a-1)t+1)x+bt)\circ (ax + b) =$$ $$= a(((a-1)t+1)x+bt) + b =$$ $$ =a((a-1)t+1)x+abt+b$$
+та
+$$(ax + b)\circ (((a-1)t+1)x+bt)  = $$ $$ =((a-1)t+1)(ax + b)+bt =$$ $$= a((a-1)t+1)x + b(a-1)t + b + bt =$$ $$= a((a-1)t+1)x+abt+b $$
+Отже автоморфізм $((a-1)t+1)x+bt$ комутує з автоморфізмом
+$ax+b$($a,b,t \in Z_2$).
+
+Згідно з лемою \ref{ficen3}, при $a,b,t \in Z_2\cap \mathbb{Q}$
+автоморфізм $((a-1)t+1)x+bt$ є скінченно-становим, а отже належить
+централізатору $C_{FAutT_2}(ax+b)$.
+
+За теоремою \ref{4k_1_sph_transitive} якщо автоморфізм $ax+b$ є
+сферично-транзитивним, то $a = 4a'+1, b = 2b'+1, a',b' \in
+Z_2$. Оскільки b є обертовним елементом кільця $Z_2$ та
+$$0*((4a't+1)x+(2b'+1)t) = (2b'+1)t$$ а $4a't+1$ є обертовним для
+довільного $t\in Z_2$ (умова автоморфності $(4a't+1)x+(2b'+1)t$), то
+$$0*C_{FAutT_2}(ax+b) = Z_2\cap \mathbb{Q}$$
+\end{proo}
+
+\begin{lemma}\label{varphi_n_zero_full}
+  Скінченно-станова ізометрія $a$ є 0-повною тоді і лише тоді, коли
+  $\varphi^n(a)$ є 0-повною для деякого $n \in \mathbb{N}$.
+\end{lemma}
+\begin{proo}
+  Для ізометрії $a = (b,c)\circ \sigma$ мають місце наступні
+  співвідношення:
+  $$0*a^{2t}=2(0*\varphi(a)^t)$$
+  $$0*a^{2t+1}=2(0*\varphi(a)^tb)+1$$
+  Отже, ізометрія $a$  є 0-повною, тоді, і лише тоді, коли $\varphi(a)$ 
+  є 0-повною. Застосувавши отримане твердження n разів отримаємо
+  аналогічне твердження для $\varphi^n(a)$.
+\end{proo}
+
+\begin{thm}\label{null_full_linear_transitive}
+  Cкінченно-станова кусково-лінійна сферично-транзитивна ізометрія є
+  0-повною.
+\end{thm}
+\begin{proo}
+  Для кусково-лінійної сферично-транзитивної ізометрії $a$ існує
+  $n\in\mathbb{N}$, такий, що ізометрія $\varphi^n(a)$ є лінійною.
+  Отже за лемами \ref{null_linear_transitive} та
+  \ref{varphi_n_zero_full} маємо твердження теореми.
+\end{proo}
+
+
+\begin{thm}\label{sph_tr_part_lin_conj}
+  Два скінченно-станові лінійні сферично-транзитивні автоморфізми
+  спряжені в $FAutT_2$ тоді, і лише тоді, коли знайдеться рівень, для
+  якого всі автоморфізми цього рівня є лінійними, та добутки всіх
+  коефіцієнтів біля х рівні для обох автоморфізмів.
+\end{thm}
+\begin{proo}
+  За теоремою \ref{conj_ax_p} скінченно-станові сферично-транзитивні втоморфізми $ax+b$ та $cx+d$ спряжені в
+  $FAutT_2$ тоді, і лише тоді, коли $a=c$. Отже, за теоремою
+  \ref{conj_null_full_izom} та теоремою
+  \ref{null_full_linear_transitive} маємо твердження теореми.
+\end{proo}
+
+Розглянемо наступний приклад застосування теореми \ref{sph_tr_part_lin_conj}.
+
+Кусочно-лінійні сферично-транзитивні автоморфізми $$f(x)= (3x +1, 3x
+)\circ \sigma $$ та $$g(x)= (9x+2 , x+7 )\circ \sigma $$ за теоремою
+\ref{sph_tr_part_lin_conj} спряжені в $FAutT_2$, оскільки
+$$3\cdot 3 = 9\cdot 1$$
+
+
+\begin{thebibliography}{9}
+\bibitem{Gr_1} {\it Р. И. Григорчук, В. В. Некрашевич, В. И. Сущанский} Автоматы, динамические системы и группы.
+ Динамические системы, автоматы и бесконечные группы, Сборник статей, Тр. МИАН, 231, Наука, М., 2000, 134–214 
+
+\bibitem{M_1} {\it Морозов Д.I.}  Спряженiсть автоморфiзмiв, що
+  задаються лiнiйними функцiями в групi скiнченностанових
+  автоморфiзмiв кореневого сферично-однорiдного дерева. Вiсник
+  Київського ун-ту. Серiя: фiзико-математичнi науки. - 2008.– вип.№1
+  –C.40- 43.
+
+\bibitem{M_2} {\it Морозов Д.I.}  Скінченно-станова спряженість сферично-транзитивних автоморфізмів кореневого бінарного дерева. Науковий часопис НПУ Драгоманова. Київ: НПУ імені М.П.Драгоманова. -2013. №12.-С.5-12.
+
+\end{thebibliography}
+
+\begin{flushright}
+Надійшла до редколегії 14.11.2013
+\end{flushright}
+\end{multicols}
+
+
+
+\end{document}
